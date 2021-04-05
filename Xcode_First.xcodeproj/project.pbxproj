@@ -7,11 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5257DAF261AD39600CCF021 /* 04_05.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DAE261AD39600CCF021 /* 04_05.cpp */; };
+		A5257DBE261AE19900CCF021 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DBD261AE19900CCF021 /* main.cpp */; };
+		A5257DC8261AE24000CCF021 /* 15552.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DB4261AE09700CCF021 /* 15552.cpp */; };
+		A5257DC9261AE24000CCF021 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DAE261AD39600CCF021 /* test.cpp */; };
+		A5257DD2261AE68C00CCF021 /* 1110.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DD1261AE68C00CCF021 /* 1110.cpp */; };
+		A5257DD6261AE75F00CCF021 /* 11022.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DD5261AE75F00CCF021 /* 11022.cpp */; };
+		A5257DDA261AEE2D00CCF021 /* 4344.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DD9261AEE2D00CCF021 /* 4344.cpp */; };
+		A5257DDE261B199A00CCF021 /* 2577.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DDD261B199A00CCF021 /* 2577.cpp */; };
 		A52E85F52615FC1500AB2907 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A52E85F42615FC1500AB2907 /* main.cpp */; };
+		A557510D261B212B002CBFF7 /* 1712.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A557510C261B212B002CBFF7 /* 1712.cpp */; };
+		A5575111261B4863002CBFF7 /* 1546.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5575110261B4863002CBFF7 /* 1546.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A5257DB9261AE19900CCF021 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		A52E85EF2615FC1500AB2907 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -24,12 +41,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A5257DAE261AD39600CCF021 /* 04_05.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 04_05.cpp; sourceTree = "<group>"; };
+		A5257DAE261AD39600CCF021 /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		A5257DB4261AE09700CCF021 /* 15552.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15552.cpp; sourceTree = "<group>"; };
+		A5257DBB261AE19900CCF021 /* Temp_Main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Temp_Main; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5257DBD261AE19900CCF021 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A5257DD1261AE68C00CCF021 /* 1110.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1110.cpp; sourceTree = "<group>"; };
+		A5257DD5261AE75F00CCF021 /* 11022.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11022.cpp; sourceTree = "<group>"; };
+		A5257DD9261AEE2D00CCF021 /* 4344.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 4344.cpp; sourceTree = "<group>"; };
+		A5257DDD261B199A00CCF021 /* 2577.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2577.cpp; sourceTree = "<group>"; };
 		A52E85F12615FC1500AB2907 /* Xcode_First */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Xcode_First; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52E85F42615FC1500AB2907 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A557510C261B212B002CBFF7 /* 1712.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1712.cpp; sourceTree = "<group>"; };
+		A5575110261B4863002CBFF7 /* 1546.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1546.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A5257DB8261AE19900CCF021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A52E85EE2615FC1500AB2907 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,18 +73,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A520AF712618C1EF00C7BF4D /* 4.4 */ = {
+		A5257DBC261AE19900CCF021 /* Temp_Main */ = {
 			isa = PBXGroup;
 			children = (
-				A5257DAE261AD39600CCF021 /* 04_05.cpp */,
+				A5257DBD261AE19900CCF021 /* main.cpp */,
 			);
-			path = 4.4;
+			path = Temp_Main;
+			sourceTree = "<group>";
+		};
+		A5257DCC261AE29900CCF021 /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				A5257DAE261AD39600CCF021 /* test.cpp */,
+			);
+			path = "C++";
+			sourceTree = "<group>";
+		};
+		A5257DCE261AE2A700CCF021 /* BAEKJOON */ = {
+			isa = PBXGroup;
+			children = (
+				A5257DB4261AE09700CCF021 /* 15552.cpp */,
+				A5257DD1261AE68C00CCF021 /* 1110.cpp */,
+				A5257DD5261AE75F00CCF021 /* 11022.cpp */,
+				A5257DD9261AEE2D00CCF021 /* 4344.cpp */,
+				A5257DDD261B199A00CCF021 /* 2577.cpp */,
+				A557510C261B212B002CBFF7 /* 1712.cpp */,
+				A5575110261B4863002CBFF7 /* 1546.cpp */,
+			);
+			path = BAEKJOON;
 			sourceTree = "<group>";
 		};
 		A52E85E82615FC1500AB2907 = {
 			isa = PBXGroup;
 			children = (
-				A520AF712618C1EF00C7BF4D /* 4.4 */,
+				A5257DBC261AE19900CCF021 /* Temp_Main */,
 				A52E85F32615FC1500AB2907 /* Xcode_First */,
 				A52E85F22615FC1500AB2907 /* Products */,
 			);
@@ -61,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A52E85F12615FC1500AB2907 /* Xcode_First */,
+				A5257DBB261AE19900CCF021 /* Temp_Main */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				A52E85F42615FC1500AB2907 /* main.cpp */,
+				A5257DCE261AE2A700CCF021 /* BAEKJOON */,
+				A5257DCC261AE29900CCF021 /* C++ */,
 			);
 			path = Xcode_First;
 			sourceTree = "<group>";
@@ -76,6 +134,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A5257DBA261AE19900CCF021 /* Temp_Main */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5257DBF261AE19900CCF021 /* Build configuration list for PBXNativeTarget "Temp_Main" */;
+			buildPhases = (
+				A5257DB7261AE19900CCF021 /* Sources */,
+				A5257DB8261AE19900CCF021 /* Frameworks */,
+				A5257DB9261AE19900CCF021 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Temp_Main;
+			productName = Temp_Main;
+			productReference = A5257DBB261AE19900CCF021 /* Temp_Main */;
+			productType = "com.apple.product-type.tool";
+		};
 		A52E85F02615FC1500AB2907 /* Xcode_First */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A52E85F82615FC1500AB2907 /* Build configuration list for PBXNativeTarget "Xcode_First" */;
@@ -101,6 +176,9 @@
 			attributes = {
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					A5257DBA261AE19900CCF021 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					A52E85F02615FC1500AB2907 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -120,23 +198,59 @@
 			projectRoot = "";
 			targets = (
 				A52E85F02615FC1500AB2907 /* Xcode_First */,
+				A5257DBA261AE19900CCF021 /* Temp_Main */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A5257DB7261AE19900CCF021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5257DBE261AE19900CCF021 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A52E85ED2615FC1500AB2907 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5257DAF261AD39600CCF021 /* 04_05.cpp in Sources */,
+				A5575111261B4863002CBFF7 /* 1546.cpp in Sources */,
+				A5257DDA261AEE2D00CCF021 /* 4344.cpp in Sources */,
+				A5257DD6261AE75F00CCF021 /* 11022.cpp in Sources */,
+				A5257DD2261AE68C00CCF021 /* 1110.cpp in Sources */,
+				A5257DC8261AE24000CCF021 /* 15552.cpp in Sources */,
+				A557510D261B212B002CBFF7 /* 1712.cpp in Sources */,
 				A52E85F52615FC1500AB2907 /* main.cpp in Sources */,
+				A5257DDE261B199A00CCF021 /* 2577.cpp in Sources */,
+				A5257DC9261AE24000CCF021 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A5257DC0261AE19900CCF021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D73P27WJ9D;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A5257DC1261AE19900CCF021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D73P27WJ9D;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A52E85F62615FC1500AB2907 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -271,6 +385,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A5257DBF261AE19900CCF021 /* Build configuration list for PBXNativeTarget "Temp_Main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5257DC0261AE19900CCF021 /* Debug */,
+				A5257DC1261AE19900CCF021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A52E85EC2615FC1500AB2907 /* Build configuration list for PBXProject "Xcode_First" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
