@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
         Sum += Num[i];
         
         if(Num[i] > Max)
-            Max = Num[i];
+            Max = Num[i]; //
     }
     
     Average = Sum/N;
