@@ -5,6 +5,7 @@
 //  Created by 한정경 on 2021/04/05.
 //
 
+/*
 #include <iostream>
 
 
@@ -54,7 +55,7 @@ void ShowStat(Animal *animal)
 }
 
 
-int main()
+int main2()
 {
     Animal *list[10];
     int animal_num = 0;
