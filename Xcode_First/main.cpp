@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stack>
 
 using std::cin;
 using std::cout;
@@ -6,43 +7,26 @@ using std::endl;
 
 int main()
 {
-    int Mod[10];
-    int Modcount = 0;
-    bool hasMod = false;
-    int N, temp;
+    std::stack<int> MyStack;
+    int N, M, V;    //정점의 개수, 간선의 개수, 탐색을 시작할 정점의 번호
     
-    cin >> N;
-    Mod[Modcount] = N % 42;
+    cin >> N >> M >> V;
     
-    for(int i = 1; i < 10; i ++)        //이미 하나 입력했으니까
+    int DFS[2][M];
+    
+    for(int i = 0; i < M; i ++)
     {
-        cin >> N;
-        temp = N % 42;
-        
-        //cout << N << " % " << "42 = " << temp << endl;
-        
-        for(int j = 0; j < 10; j ++)     //맨 마지막이 다르면 10으로 끝나니까
-        {
-            if(temp == Mod[Modcount])
-                {
-                    hasMod = true;      //같은 나머지가 존재한다면 true로 바꿔준다.
-                }
-        }
-        if(hasMod == false)             //같은 나머지가 없다면
-        {
-            Modcount ++;
-            //cout << temp << " " << endl;
-            Mod[Modcount] = temp;       //새로운 나머지를 추가하고
-            
-        }
-        hasMod = false;             //false로 초기화한다.
+        cin >> DFS[0][i] >> DFS[1][i];
     }
     
-    for(int i = 0; i < Modcount; i ++)
+    
+    
+    
+    
+    
+    for(int i = 0; i < M; i ++)
     {
-        cout << "Mod" << i << " " << Mod[Modcount] << endl;
+        cout << DFS[0][i] << " " << DFS[1][i] << endl;
     }
     
-    cout << Modcount << endl;
 }
-

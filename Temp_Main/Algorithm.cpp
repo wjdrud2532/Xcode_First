@@ -20,7 +20,7 @@
  int arr[MAX];
  int tempArr[MAX];
   
- /*
+ 
  void partition(int low, int high, int &pivotpoint)
  {
          int pivotItem = arr[low];
