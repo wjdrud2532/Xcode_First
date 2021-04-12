@@ -2,29 +2,30 @@
 //  11720.cpp
 //  Xcode_First
 //
-//  Created by 한정경 on 2021/04/11.
+//  Created by 한정경 on 2021/04/12.
 //
 
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 int main()
 {
-    int num1;
-    cin >> num1;
+    int N, Sum = 0;
+    char Num;
     
-    char num2;
-
-    int sum = 0;
-
-    for(int i=0; i<num1; i++)
+    cin >> N;
+    
+    for(int i = 0; i < N; i ++)
     {
-        cin >> num2;
-        sum += (num2 - '0');
+        cin >> Num;
+        Sum += Num - 48;
     }
-
-    cout<<sum<<endl;
-
+    
+    cout << Sum << endl;
+    
     return 0;
+    
 }
