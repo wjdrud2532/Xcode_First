@@ -1,3 +1,10 @@
+//
+//  4673_시간줄이는걸로다시풀어보기.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/04/14.
+//
+
 
 #include <iostream>
 #include <array>
