@@ -29,6 +29,7 @@
 		A5A1F648261F27B700DE1AF8 /* 1152.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A1F647261F27B700DE1AF8 /* 1152.cpp */; };
 		A5C5188326270B78002DBB62 /* 15596.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5C5188226270B78002DBB62 /* 15596.cpp */; };
 		A5C51887262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5C51886262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp */; };
+		A5CD4814262875C200DDD050 /* 1065.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5CD4813262875C200DDD050 /* 1065.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,7 @@
 		A5A1F647261F27B700DE1AF8 /* 1152.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1152.cpp; sourceTree = "<group>"; };
 		A5C5188226270B78002DBB62 /* 15596.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15596.cpp; sourceTree = "<group>"; };
 		A5C51886262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "4673_시간줄이는걸로다시풀어보기.cpp"; sourceTree = "<group>"; };
+		A5CD4813262875C200DDD050 /* 1065.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1065.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				A56357842625E8CA0059F297 /* 8958.cpp */,
 				A5C5188226270B78002DBB62 /* 15596.cpp */,
 				A5C51886262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp */,
+				A5CD4813262875C200DDD050 /* 1065.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				A573C1FE262398C80066A54E /* 1260.cpp in Sources */,
 				A5257DDA261AEE2D00CCF021 /* 4344.cpp in Sources */,
 				A5257DD6261AE75F00CCF021 /* 11022.cpp in Sources */,
+				A5CD4814262875C200DDD050 /* 1065.cpp in Sources */,
 				A5C5188326270B78002DBB62 /* 15596.cpp in Sources */,
 				A51F5FF626233C8A007A8EC0 /* 11720.cpp in Sources */,
 				A5257DD2261AE68C00CCF021 /* 1110.cpp in Sources */,
