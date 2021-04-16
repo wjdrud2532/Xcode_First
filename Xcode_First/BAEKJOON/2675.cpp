@@ -1,3 +1,10 @@
+//
+//  2675.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/04/16.
+//
+
 #include <iostream>
 #include <cstring>
 
@@ -27,6 +34,6 @@ int main()
         cout << endl;
     }
     
-    return 0;   
+    return 0;
     
 }

@@ -10,6 +10,7 @@
 		A5103C772621E809006F6DD1 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5103C762621E809006F6DD1 /* test.cpp */; };
 		A5134B562620796E00C3867C /* 3052.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5134B552620796E00C3867C /* 3052.cpp */; };
 		A51F5FF626233C8A007A8EC0 /* 11720.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51F5FF526233C8A007A8EC0 /* 11720.cpp */; };
+		A52188D12629AA100091849C /* 2675.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A52188D02629AA100091849C /* 2675.cpp */; };
 		A5257DBE261AE19900CCF021 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DBD261AE19900CCF021 /* main.cpp */; };
 		A5257DC8261AE24000CCF021 /* 15552.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DB4261AE09700CCF021 /* 15552.cpp */; };
 		A5257DC9261AE24000CCF021 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DAE261AD39600CCF021 /* test.cpp */; };
@@ -30,6 +31,7 @@
 		A5C5188326270B78002DBB62 /* 15596.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5C5188226270B78002DBB62 /* 15596.cpp */; };
 		A5C51887262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5C51886262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp */; };
 		A5CD4814262875C200DDD050 /* 1065.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5CD4813262875C200DDD050 /* 1065.cpp */; };
+		A5CD48182628858000DDD050 /* 10809.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5CD48172628858000DDD050 /* 10809.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +59,7 @@
 		A5103C762621E809006F6DD1 /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		A5134B552620796E00C3867C /* 3052.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3052.cpp; sourceTree = "<group>"; };
 		A51F5FF526233C8A007A8EC0 /* 11720.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11720.cpp; sourceTree = "<group>"; };
+		A52188D02629AA100091849C /* 2675.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2675.cpp; sourceTree = "<group>"; };
 		A5257DAE261AD39600CCF021 /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		A5257DB4261AE09700CCF021 /* 15552.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15552.cpp; sourceTree = "<group>"; };
 		A5257DBB261AE19900CCF021 /* Temp_Main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Temp_Main; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +82,7 @@
 		A5C5188226270B78002DBB62 /* 15596.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15596.cpp; sourceTree = "<group>"; };
 		A5C51886262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "4673_시간줄이는걸로다시풀어보기.cpp"; sourceTree = "<group>"; };
 		A5CD4813262875C200DDD050 /* 1065.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1065.cpp; sourceTree = "<group>"; };
+		A5CD48172628858000DDD050 /* 10809.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 10809.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 				A5C5188226270B78002DBB62 /* 15596.cpp */,
 				A5C51886262723E8002DBB62 /* 4673_시간줄이는걸로다시풀어보기.cpp */,
 				A5CD4813262875C200DDD050 /* 1065.cpp */,
+				A5CD48172628858000DDD050 /* 10809.cpp */,
+				A52188D02629AA100091849C /* 2675.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -276,7 +282,9 @@
 				A5257DDE261B199A00CCF021 /* 2577.cpp in Sources */,
 				A5257DC9261AE24000CCF021 /* test.cpp in Sources */,
 				A573C20226245C380066A54E /* 1157.cpp in Sources */,
+				A5CD48182628858000DDD050 /* 10809.cpp in Sources */,
 				A5694BC4261CE5E50062BA33 /* 2839.cpp in Sources */,
+				A52188D12629AA100091849C /* 2675.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

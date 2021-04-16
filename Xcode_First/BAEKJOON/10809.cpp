@@ -18,12 +18,12 @@ int main()
     string str;
     char Alpa[26];
     int HasAlpa[26];
-    std::fill_n(HasAlpa, 26, -1);
+    std::fill_n(HasAlpa, 26, -1);       //-1로 초기화
     
     cin >> str;
     
     for (int i = 0; i < 26; i ++)
-        Alpa[i] = i + 97;
+        Alpa[i] = i + 97;               //아스키 97이 아닌 보기 쉽도록 문자 'a'로 대체할 것
    
     for(int i = 0; i < str.size(); i ++)
     {
