@@ -1,3 +1,10 @@
+//
+//  2869.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/04/18.
+//
+
 #include <iostream>
 
 using std::cin;
