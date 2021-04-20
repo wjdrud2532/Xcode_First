@@ -1,3 +1,10 @@
+//
+//  2775.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/04/20.
+//
+
 #include <iostream>
 #include <time.h>
 
