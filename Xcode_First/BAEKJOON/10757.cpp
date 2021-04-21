@@ -1,6 +1,13 @@
+//
+//  10757.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/04/21.
+//
+
 #include <iostream>
 #include <cstring>
-#include <algorithm>
+#include <algorithm>        //std::reverse 를 사용하기 위함
 
 using std::cin;
 using std::cout;
