@@ -23,7 +23,7 @@ int main() {
             if(input[i] % j == 0)
             {
                 count--;
-                break;
+              ff  break;
             }
         }
     cout << count;
