@@ -7,33 +7,42 @@ using std::endl;
 
 int main()
 {
-    std::ios_base::sync_with_stdio(false);
-    cout.tie(nullptr);
-    cin.tie(nullptr);
     
-    int M, N;
-    bool * PrimeNumber;
+    int N;
     
-    cin >> M >> N;
     
-    PrimeNumber = new bool[N + 1];              //동적 배열 할당
-    
-    std::fill_n(PrimeNumber, N + 1, true);      //모든 공간을 true로 설정
-    PrimeNumber[0] = PrimeNumber[1] = false;    //0 1은 소수가 아니므로
-    
-    for(int i = 2; i <= std::sqrt(N); i ++)     //소수 판별
-    {
-        if(PrimeNumber[i] == true)              //소수면
-            for(int j = i * 2; j <= N; j += i)  //그 수의 배수는 모두 소수가 아니다.
+        while (1)
+        {
+            cin >> N;
+            
+            if(!N)
+                break;
+            
+            bool * PrimeNumber = nullptr;
+            int Count = 0;
+            int Max = N * 2 + 1;
+            PrimeNumber = new bool(Max);
+            std::fill_n(PrimeNumber, Max, true);
+            PrimeNumber[0] = PrimeNumber[1] = false;
+            
+            for(int i = 2; i <= std::sqrt(Max - 1); i ++)
+            {
+                if(PrimeNumber[i] == true)
+                    for(int j = i * 2; j <= Max - 1; j += i )
                 PrimeNumber[j] = false;
-    }
+            }
+            
+            for(int i = N + 1; i <= Max - 1; i ++)
+            if(PrimeNumber[i] == true)
+                Count ++;
+            
+            cout << Count << endl;
+            delete PrimeNumber;
+            
+        }
     
-    for(int i = M; i <= N; i ++)
-    {
-        if(PrimeNumber[i] == true)
-            printf("%d\n", i);                  //printf와 cout의 시간차이가 어마어마하다
-            //cout << i << endl;
-    }
-    
+    //cout << stderr << endl;
+    //ㅠㅕㅛ효ㅕ
     return 0;
+    
 }

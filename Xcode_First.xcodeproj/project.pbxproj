@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A50E441F2638152700EE9A09 /* 1929.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A50E441E2638152700EE9A09 /* 1929.cpp */; };
+		A50E4423263835E000EE9A09 /* 4948_런타임오류남.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A50E4422263835E000EE9A09 /* 4948_런타임오류남.cpp */; };
 		A5134B562620796E00C3867C /* 3052.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5134B552620796E00C3867C /* 3052.cpp */; };
 		A5140149262EE9EF00AFE542 /* 2775_다시.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5140148262EE9EF00AFE542 /* 2775_다시.cpp */; };
 		A518EC4826366160004AFC3E /* 2581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A518EC4726366160004AFC3E /* 2581.cpp */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		A50E441E2638152700EE9A09 /* 1929.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1929.cpp; sourceTree = "<group>"; };
+		A50E4422263835E000EE9A09 /* 4948_런타임오류남.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "4948_런타임오류남.cpp"; sourceTree = "<group>"; };
 		A5134B552620796E00C3867C /* 3052.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3052.cpp; sourceTree = "<group>"; };
 		A5140148262EE9EF00AFE542 /* 2775_다시.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "2775_다시.cpp"; sourceTree = "<group>"; };
 		A518EC4726366160004AFC3E /* 2581.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2581.cpp; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				A518EC4726366160004AFC3E /* 2581.cpp */,
 				A518EC4B26366AE9004AFC3E /* 11653.cpp */,
 				A50E441E2638152700EE9A09 /* 1929.cpp */,
+				A50E4422263835E000EE9A09 /* 4948_런타임오류남.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				A5C5188326270B78002DBB62 /* 15596.cpp in Sources */,
 				A51F5FF626233C8A007A8EC0 /* 11720.cpp in Sources */,
 				A518EC4826366160004AFC3E /* 2581.cpp in Sources */,
+				A50E4423263835E000EE9A09 /* 4948_런타임오류남.cpp in Sources */,
 				A51E9A43262A7FD600048710 /* 2941.cpp in Sources */,
 				A5257DD2261AE68C00CCF021 /* 1110.cpp in Sources */,
 				A5257DC8261AE24000CCF021 /* 15552.cpp in Sources */,
