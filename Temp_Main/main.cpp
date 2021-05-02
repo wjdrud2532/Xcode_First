@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using std::cin;
 using std::cout;
@@ -7,42 +6,42 @@ using std::endl;
 
 int main()
 {
-    
     int N;
     
+    cin >> N;
     
-        while (1)
+    int arr[N][3];
+    int Max[2] = { 0, 0 };
+    
+    for(int i = 0; i < N; i ++)
+    {
+        cin >> arr[i][0] >> arr[i][1];
+        
+        if(arr[i][0] >= Max[0] && arr[i][1] > Max[1])       //가장 큰 값을 Max에 저장
         {
-            cin >> N;
-            
-            if(!N)
-                break;
-            
-            bool * PrimeNumber = nullptr;
-            int Count = 0;
-            int Max = N * 2 + 1;
-            PrimeNumber = new bool(Max);
-            std::fill_n(PrimeNumber, Max, true);
-            PrimeNumber[0] = PrimeNumber[1] = false;
-            
-            for(int i = 2; i <= std::sqrt(Max - 1); i ++)
-            {
-                if(PrimeNumber[i] == true)
-                    for(int j = i * 2; j <= Max - 1; j += i )
-                PrimeNumber[j] = false;
-            }
-            
-            for(int i = N + 1; i <= Max - 1; i ++)
-            if(PrimeNumber[i] == true)
-                Count ++;
-            
-            cout << Count << endl;
-            delete PrimeNumber;
-            
+            Max[0] = arr[i][0];
+            Max[1] = arr[i][1];
+            arr[i][2] = 1;
         }
+    }
     
-    //cout << stderr << endl;
-    //ㅠㅕㅛ효ㅕ
-    return 0;
+    int tempNum = 2;
+    int count = 0;
+    
+    for(int i = 0; i < N; i ++)
+    {
+        if(arr[i][0] != Max[0] && arr[i][1] != Max[1])
+        {
+            for(int j = 0; j < N; j ++)
+            {
+                if(arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1])
+                {
+                    
+                }
+            }
+        }
+            
+    }
     
 }
+
