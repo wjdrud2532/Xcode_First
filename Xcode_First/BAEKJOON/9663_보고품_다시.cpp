@@ -1,3 +1,11 @@
+//
+//  9663_보고품_다시.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/05/21.
+//
+
+//문제풀이 중 비트연산도 있다
 #include <iostream>
 
 #define max 15

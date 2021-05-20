@@ -1,18 +1,38 @@
-//
-//  main.cpp
-//  Test5
-//
-//  Created by 한정경 on 2021/05/18.
-//
-
 #include <iostream>
-#include "MyString.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
+class Animal
+{
+    public :
+    Animal() {}
+    virtual ~Animal() {}
+    virtual void speak() = 0;
+};
 
+class Dog : public Animal
+{
+    public :
+    Dog() : Animal() {}
+    void speak() override
+    {
+        std:: cout << "왈왈" << std::endl;
+    }
+};
+
+class Cat : public Animal
+{
+public:
+    Cat() : Animal() {}
+    void speak() override
+    {
+        std::cout << "야옹야옹" << std::endl;
+    }
+};
+
+int main()
+{
+    Animal * dog = new Dog();
+    Animal * cat = new Cat();
     
-    
-    std::cout << "Hello, World!\n";
-    return 0;
+    dog->speak();
+    cat->speak();
 }
