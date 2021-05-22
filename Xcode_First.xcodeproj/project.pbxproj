@@ -16,6 +16,7 @@
 		A518EC4826366160004AFC3E /* 2581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A518EC4726366160004AFC3E /* 2581.cpp */; };
 		A518EC4C26366AE9004AFC3E /* 11653.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A518EC4B26366AE9004AFC3E /* 11653.cpp */; };
 		A51BB8212656DD3C007F2756 /* 9663_보고품_다시.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51BB8202656DD3C007F2756 /* 9663_보고품_다시.cpp */; };
+		A51BB8232659BBBF007F2756 /* 14888.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51BB8222659BBBF007F2756 /* 14888.cpp */; };
 		A51E696F26303EB600D8D143 /* 10757.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51E696E26303EB600D8D143 /* 10757.cpp */; };
 		A51E9A43262A7FD600048710 /* 2941.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51E9A42262A7FD600048710 /* 2941.cpp */; };
 		A51E9A47262ACEC600048710 /* 1316.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51E9A46262ACEC600048710 /* 1316.cpp */; };
@@ -125,6 +126,7 @@
 		A518EC4726366160004AFC3E /* 2581.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2581.cpp; sourceTree = "<group>"; };
 		A518EC4B26366AE9004AFC3E /* 11653.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11653.cpp; sourceTree = "<group>"; };
 		A51BB8202656DD3C007F2756 /* 9663_보고품_다시.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "9663_보고품_다시.cpp"; sourceTree = "<group>"; };
+		A51BB8222659BBBF007F2756 /* 14888.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 14888.cpp; sourceTree = "<group>"; };
 		A51E696E26303EB600D8D143 /* 10757.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 10757.cpp; sourceTree = "<group>"; };
 		A51E9A42262A7FD600048710 /* 2941.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2941.cpp; sourceTree = "<group>"; };
 		A51E9A46262ACEC600048710 /* 1316.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1316.cpp; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				A51333DC2654278700F1713D /* 15650.cpp */,
 				A51333DE2654328300F1713D /* 15651.cpp */,
 				A51BB8202656DD3C007F2756 /* 9663_보고품_다시.cpp */,
+				A51BB8222659BBBF007F2756 /* 14888.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				A52E85F52615FC1500AB2907 /* main.cpp in Sources */,
 				A5257DDE261B199A00CCF021 /* 2577.cpp in Sources */,
 				A5140149262EE9EF00AFE542 /* 2775_Again.cpp in Sources */,
+				A51BB8232659BBBF007F2756 /* 14888.cpp in Sources */,
 				A5D57C3F265354260099E32C /* 2108_ QuestionMark.cpp in Sources */,
 				A573C20226245C380066A54E /* 1157.cpp in Sources */,
 				A59BB882263D1EB1009773B0 /* 2798.cpp in Sources */,
