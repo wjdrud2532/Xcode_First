@@ -13,6 +13,7 @@
 		A51333DF2654328300F1713D /* 15651.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51333DE2654328300F1713D /* 15651.cpp */; };
 		A5134B562620796E00C3867C /* 3052.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5134B552620796E00C3867C /* 3052.cpp */; };
 		A5140149262EE9EF00AFE542 /* 2775_Again.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5140148262EE9EF00AFE542 /* 2775_Again.cpp */; };
+		A5150F792662B941006F9537 /* 2579.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5150F782662B941006F9537 /* 2579.cpp */; };
 		A518EC4826366160004AFC3E /* 2581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A518EC4726366160004AFC3E /* 2581.cpp */; };
 		A518EC4C26366AE9004AFC3E /* 11653.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A518EC4B26366AE9004AFC3E /* 11653.cpp */; };
 		A51BB8212656DD3C007F2756 /* 9663_보고품_다시.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51BB8202656DD3C007F2756 /* 9663_보고품_다시.cpp */; };
@@ -128,6 +129,7 @@
 		A51333DE2654328300F1713D /* 15651.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15651.cpp; sourceTree = "<group>"; };
 		A5134B552620796E00C3867C /* 3052.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3052.cpp; sourceTree = "<group>"; };
 		A5140148262EE9EF00AFE542 /* 2775_Again.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2775_Again.cpp; sourceTree = "<group>"; };
+		A5150F782662B941006F9537 /* 2579.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2579.cpp; sourceTree = "<group>"; };
 		A518B98E26440E2A0022FFB1 /* 2108_ QuestionMark.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "2108_ QuestionMark.cpp"; sourceTree = "<group>"; };
 		A518EC4726366160004AFC3E /* 2581.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2581.cpp; sourceTree = "<group>"; };
 		A518EC4B26366AE9004AFC3E /* 11653.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11653.cpp; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				A542E7E2265C9403002E8078 /* 9461.cpp */,
 				A51D6E33265DA9B600079EE5 /* 1149.cpp */,
 				A528AD62265E946700989864 /* 1932.cpp */,
+				A5150F782662B941006F9537 /* 2579.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				A51F5FF626233C8A007A8EC0 /* 11720.cpp in Sources */,
 				A51D6E34265DA9B600079EE5 /* 1149.cpp in Sources */,
 				A531C80A263C938200B5A05F /* 3053.cpp in Sources */,
+				A5150F792662B941006F9537 /* 2579.cpp in Sources */,
 				A518EC4826366160004AFC3E /* 2581.cpp in Sources */,
 				A558D57B264572C900DF75C9 /* 1427.cpp in Sources */,
 				A50E4423263835E000EE9A09 /* 4948_RuntimeError.cpp in Sources */,
