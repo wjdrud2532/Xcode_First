@@ -36,7 +36,7 @@ int main() {
     dp[2] = max(stair[0] + stair[2], stair[1] + stair[2]);  //2칸을 간 경우, 0 + 2 또는 1 + 2
  
     for (int i = 3; i < n; i ++)
-        dp[i] = max(dp[i - 2] + stair[i], stair[i - 1] + stair[i] + dp[i - 3]);
+        dp[i] = stair[i] + max(dp[i - 2] , stair[i - 1] + dp[i - 3]);
         //     큰값      전전칸까지의 최대 + 현재칸,   전칸 + 현재칸 + 전전전칸까지의 최대
  
     cout << dp[n - 1] << '\n';
