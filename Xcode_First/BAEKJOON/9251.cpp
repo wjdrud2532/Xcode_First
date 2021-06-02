@@ -1,3 +1,11 @@
+//
+//  9251.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/06/03.
+//
+
+//너무 어설프다...
 
 #include <iostream>
 #include <algorithm>
@@ -66,7 +74,7 @@ int main() {
 //                    cout << dp[i][j] << " ";
 //                else
 //                    cout << (char)dp[i][j] << " ";
-//                
+//
 //            }
 //            else
 //                cout << "  ";
