@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <algorithm>
 #include <cmath>
@@ -9,59 +8,67 @@ using std::cout;
 using std::ios_base;
 using std::max;
 
+int Max = 0;
+int N;
+int arr[246913] = {0,};    //이전까지의 소수 개수의 합
+//     0 1 2 3 4 5 6 7 8 9 10
+bool PrimeArray[2469130];
+
+void Eratos(int n = 2469130)
+{
+    /*  만일 n이 1보다 작거나 같으면 함수 종료 */
+      if (n <= 1) return;
+
+      for (int i = 2; i <= n; i++)
+          PrimeArray[i] = true;
+
+      for (int i = 2; i * i <= n; i++)
+      {
+          if (PrimeArray[i])
+          {
+              for (int j = i * i; j <= n; j += i)
+                  PrimeArray[j] = false;
+              arr[i] = arr[i - 1] + 1;
+          }
+                  
+          else
+              arr[i] = arr[i - 1];
+      }
+}
+
+
+
+
 int main() {
     
     ios_base :: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int N;
-    int arr[100002];
-    int dp[100002];
-    int max;
+    Eratos();
     
-    cin >> N;
+//    int temp;
+//    cin >> temp;
+//    for(int i = 1; i <= temp; i ++)
+//    {
+//        cout << PrimeArray[i] << " ";
+//    }
+//    cout << "\n";
+//    for(int i = 1; i <= temp; i ++)
+//    {
+//        cout << arr[i] << " ";
+//    }
     
-    for(int i = 1; i <= N; i ++)
-        cin >> arr[i];
     
-    /*              왜 안되는거지?
-     dp[1] = max = arr[1];
-     for(int i = 2; i <= N; i ++)
-     {
-     if(dp[i - 1] > dp[i - 1] + arr[i])  //연속된 값들이 이전 값보다 작을 경우 그것이 최대 max인지 판별해야함
-     {
-     if(dp[i - 1] > std::abs(arr[i]) && arr[i] < 0)
-     dp[i] = dp[i - 1] + arr[i];
-     else
-     if(dp[i - 1] * arr[i] > 0)
-     dp[i] = std::min(std::abs(dp[i - 1]), std::abs(arr[i])) * -1;
-     }
-     else        //연속된 값이 이전값보다 작을 경우
-     {
-     if(dp[i - 1] + arr[i] < arr[i])
-     dp[i] = arr[i];
-     else
-     dp[i] = dp[i - 1] + arr[i];
-     }
-     
-     if(dp[i] > max)
-     max = dp[i];
-     }
-     
-     for(int i = 1; i <= N; i ++)
-     cout << dp[i] << " ";
-     cout << "\n";
-     cout << max << "\n";
-     */
-    
-    dp[1] = arr[1];
-    int result = dp[1];
-    for (int i = 1; i <= N; i++)
+    while(1)
     {
-        dp[i] = std::max(dp[i - 1] + arr[i], arr[i]);
-        result = std::max(result, dp[i]);
+        cin >> N;
+        
+        if(N == 0)
+            break;
+        
+        cout << arr[N * 2] - arr[N] <<"\n";
     }
-    cout << result << "\n";
+    
+    return 0;
 }
-
