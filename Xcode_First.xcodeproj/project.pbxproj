@@ -38,6 +38,7 @@
 		A5241C1926669CB1000EDF2E /* 11054.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5241C1826669CB1000EDF2E /* 11054.cpp */; };
 		A5241C1B2667EAC2000EDF2E /* 2565.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5241C1A2667EAC2000EDF2E /* 2565.cpp */; };
 		A5241C1D266808A7000EDF2E /* 9251.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5241C1C266808A7000EDF2E /* 9251.cpp */; };
+		A5241C1F266C614F000EDF2E /* 1912.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5241C1E266C614F000EDF2E /* 1912.cpp */; };
 		A5257DBE261AE19900CCF021 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DBD261AE19900CCF021 /* main.cpp */; };
 		A5257DC8261AE24000CCF021 /* 15552.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DB4261AE09700CCF021 /* 15552.cpp */; };
 		A5257DD2261AE68C00CCF021 /* 1110.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DD1261AE68C00CCF021 /* 1110.cpp */; };
@@ -162,6 +163,7 @@
 		A5241C1826669CB1000EDF2E /* 11054.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11054.cpp; sourceTree = "<group>"; };
 		A5241C1A2667EAC2000EDF2E /* 2565.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2565.cpp; sourceTree = "<group>"; };
 		A5241C1C266808A7000EDF2E /* 9251.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 9251.cpp; sourceTree = "<group>"; };
+		A5241C1E266C614F000EDF2E /* 1912.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1912.cpp; sourceTree = "<group>"; };
 		A5257DB4261AE09700CCF021 /* 15552.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15552.cpp; sourceTree = "<group>"; };
 		A5257DBB261AE19900CCF021 /* Temp_Main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Temp_Main; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5257DBD261AE19900CCF021 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		A52E85E82615FC1500AB2907 = {
 			isa = PBXGroup;
 			children = (
+				A5241C1E266C614F000EDF2E /* 1912.cpp */,
 				A5257DBC261AE19900CCF021 /* Temp_Main */,
 				A5E777D626535E150047CC01 /* Test5 */,
 				A52E85F32615FC1500AB2907 /* Xcode_First */,
@@ -564,6 +567,7 @@
 				A59BB87C263CA3FC009773B0 /* 10870.cpp in Sources */,
 				A5A1F648261F27B700DE1AF8 /* 1152.cpp in Sources */,
 				A5150F81266470CC006F9537 /* 11053.cpp in Sources */,
+				A5241C1F266C614F000EDF2E /* 1912.cpp in Sources */,
 				A59816D0263AC80E0074B581 /* 3009.cpp in Sources */,
 				A558D57D26458AFF00DF75C9 /* 11650.cpp in Sources */,
 				A59BB880263D1BE4009773B0 /* 11729_SeeAnswer.cpp in Sources */,
