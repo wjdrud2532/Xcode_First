@@ -1,3 +1,10 @@
+//
+//  13305.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/06/10.
+//
+
 #include <iostream>
 #include <algorithm>
 
@@ -46,8 +53,6 @@ int main()
     }
     int temp = 0;
     (CurrentOilPrice > OilPrice[N - 2]) ? temp = OilPrice[N - 2] : temp = CurrentOilPrice;
-    //이걸 for문 안에 넣을 수도 있다.
-    //넣지 않아도 되는 식을 생각해보자
 
     minPrice += tempRoadLength * temp;
     cout << minPrice << "\n";
