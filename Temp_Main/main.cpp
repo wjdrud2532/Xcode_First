@@ -8,7 +8,7 @@ using std::ios_base;
 int Euclid(int N1, int N2)
 {
     int temp;
-    
+    //a
     while(1)
     {
         temp = N2 % N1;
