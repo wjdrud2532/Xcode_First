@@ -6,7 +6,6 @@
 using std::cin;
 using std::cout;
 using std::ios_base;
-using std::vector;
 
 int main()
 {
