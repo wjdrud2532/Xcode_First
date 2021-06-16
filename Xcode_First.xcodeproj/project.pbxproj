@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A506D388267907AE008DA1A6 /* 2981_너무 느림.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A506D387267907AE008DA1A6 /* 2981_너무 느림.cpp */; };
+		A506D38A26790FB8008DA1A6 /* 3036.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A506D38926790FB8008DA1A6 /* 3036.cpp */; };
+		A506D38C26791A13008DA1A6 /* 11050.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A506D38B26791A13008DA1A6 /* 11050.cpp */; };
+		A506D38E267A610D008DA1A6 /* 11051.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A506D38D267A610D008DA1A6 /* 11051.cpp */; };
 		A50E441F2638152700EE9A09 /* 1929.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A50E441E2638152700EE9A09 /* 1929.cpp */; };
 		A51333DD2654278700F1713D /* 15650.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51333DC2654278700F1713D /* 15650.cpp */; };
 		A51333DF2654328300F1713D /* 15651.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51333DE2654328300F1713D /* 15651.cpp */; };
@@ -142,6 +145,9 @@
 
 /* Begin PBXFileReference section */
 		A506D387267907AE008DA1A6 /* 2981_너무 느림.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "2981_너무 느림.cpp"; sourceTree = "<group>"; };
+		A506D38926790FB8008DA1A6 /* 3036.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3036.cpp; sourceTree = "<group>"; };
+		A506D38B26791A13008DA1A6 /* 11050.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11050.cpp; sourceTree = "<group>"; };
+		A506D38D267A610D008DA1A6 /* 11051.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11051.cpp; sourceTree = "<group>"; };
 		A50E441E2638152700EE9A09 /* 1929.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1929.cpp; sourceTree = "<group>"; };
 		A51333DC2654278700F1713D /* 15650.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15650.cpp; sourceTree = "<group>"; };
 		A51333DE2654328300F1713D /* 15651.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15651.cpp; sourceTree = "<group>"; };
@@ -371,6 +377,9 @@
 				A5213AEE26712C5800E47E0D /* 1037.cpp */,
 				A5213AF026715DE200E47E0D /* 2609.cpp */,
 				A506D387267907AE008DA1A6 /* 2981_너무 느림.cpp */,
+				A506D38926790FB8008DA1A6 /* 3036.cpp */,
+				A506D38B26791A13008DA1A6 /* 11050.cpp */,
+				A506D38D267A610D008DA1A6 /* 11051.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -583,6 +592,7 @@
 				A5CD4814262875C200DDD050 /* 1065.cpp in Sources */,
 				A520376326415C2F0040A661 /* 1436.cpp in Sources */,
 				A5C5188326270B78002DBB62 /* 15596.cpp in Sources */,
+				A506D38E267A610D008DA1A6 /* 11051.cpp in Sources */,
 				A51F5FF626233C8A007A8EC0 /* 11720.cpp in Sources */,
 				A51D6E34265DA9B600079EE5 /* 1149.cpp in Sources */,
 				A531C80A263C938200B5A05F /* 3053.cpp in Sources */,
@@ -592,7 +602,9 @@
 				A558D57B264572C900DF75C9 /* 1427.cpp in Sources */,
 				A51E9A43262A7FD600048710 /* 2941.cpp in Sources */,
 				A5257DD2261AE68C00CCF021 /* 1110.cpp in Sources */,
+				A506D38C26791A13008DA1A6 /* 11050.cpp in Sources */,
 				A5257DC8261AE24000CCF021 /* 15552.cpp in Sources */,
+				A506D38A26790FB8008DA1A6 /* 3036.cpp in Sources */,
 				A523762F2632F55300E4D20A /* 1978.cpp in Sources */,
 				A56357852625E8CA0059F297 /* 8958.cpp in Sources */,
 				A5241C1D266808A7000EDF2E /* 9251.cpp in Sources */,

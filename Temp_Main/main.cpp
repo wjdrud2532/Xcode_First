@@ -1,32 +1,58 @@
-#include <stdio.h>
+#include <iostream>
 #include <algorithm>
 
-int f(int p,int q)
-{
-    if(q==0)
-        return p;
-    return f(q,p%q);
-}
+using std::cin;
+using std::cout;
+using std::ios_base;
+
 int main()
 {
-    int n,i,a[101]={0},res=0;
-    int print[10000]={0},p=0;
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-        scanf("%d",&a[i]);
-    std::sort(a,a+n);
-    res=a[1]-a[0];
-    for(i=2;i<n;i++)
-        res=f(res,a[i]-a[0]);
-    for(i=1;i*i<=res;i++)
-        if(res%i==0)
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    int T;
+    int N, M;
+    int dp[31][31];
+    
+    dp[0][0] = dp[1][0] = dp[1][1] = 1;
+    for(int i = 1; i <= 30; i ++)
+    {
+        for(int j = 0; j <= i; j ++)
         {
-            if(i!=1)
-                printf("%d ",i);
-            if(i*i!=res)
-                print[p++]=res/i;
+            if(j == 0 || j == i)
+                dp[i][j] = 1;
+            
+            else
+                dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]);
         }
-    for(i=p-1;i>=0;i--)
-        printf("%d ",print[i]);
+    }
+    
+    cin >> T;
+    
+    for(int i = 0; i < T; i ++)
+    {
+        cin >> N >> M;
+        cout << dp[M][N] << "\n";
+    }
 }
 
+/*
+ #include <stdio.h>
+
+ int main() {
+     int n, k, t;
+     scanf("%d", &t);
+     for (int i = 0; i < t; i++) {
+         scanf("%d%d", &k, &n);
+         int res = 1, m = 1;
+         while (k >= 1) {
+             res = res * n / m;
+             n--; m++;
+             k--;
+         }
+         printf("%d\n", res);
+     }
+     return 0;
+ }
+ */
