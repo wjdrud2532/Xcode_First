@@ -44,7 +44,7 @@ int main()
             cout << "NO\n";
         
         
-        
+        //d
     }
 }
 
