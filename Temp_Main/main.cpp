@@ -23,6 +23,36 @@ int main()
     
     cin >> N;
     for(int i = 0; i < N; i ++)
+    while(1)
+    {
+        stack<char> S1;
+        stack<char> S2;
+        std::getline(cin, str);
         
+        for(int i = 0; i < str.length(); i ++)
+        {
+            if(str[i] == '(')
+                S1.push(str[i]);
+            else if(str[i] == '[')
+                S2.push(str[i]);
+        }
+        for(int i = 0; i < str.length(); i ++)
+        {
+            if(str[i] == ')' && !S1.empty())
+                S1.pop();
+            else if(str[i] == ']' && !S2.empty())
+                S2.pop();
+        }
+        
+        
+        if(S1.empty() && S2.empty())
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+        
+        
+        //d
+        //
+    }
 }
 
