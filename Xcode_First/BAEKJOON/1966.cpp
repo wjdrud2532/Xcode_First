@@ -4,7 +4,7 @@
 //
 //  Created by 한정경 on 2021/06/24.
 //
-
+//우선순위 큐를 사용하지 않고 배열을 이용했다.
 #include <iostream>
 #include <algorithm>
 #include <queue>
