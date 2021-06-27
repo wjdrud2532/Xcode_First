@@ -29,7 +29,7 @@ int main()
             arr[j] = temp;
             Q.push(make_pair(temp, j));     //배열과 스택에 차례로 저장
         }
-        
+        //JD
         std::sort(arr, arr + N);        //배열을 정렬
         
         int arrcount = N - 1;           //가장 큰 값부터 시작
