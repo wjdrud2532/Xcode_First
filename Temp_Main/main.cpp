@@ -1,9 +1,13 @@
 #include <iostream>
 #include <algorithm>
-#include <queue>
-#include <utility>
+#include <deque>
+#include <cstring>
 
-using namespace std;
+using std::deque;
+using std::string;
+using std::cin;
+using std::cout;
+using std::ios_base;
 
 int main()
 {
@@ -11,51 +15,98 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int T, temp;
-    int N, M;
+    int T, N;
+    deque<int> D;
+    string p, temp;
+    
     cin >> T;
     
     for(int i = 0; i < T; i ++)
     {
-        cin >> N >> M;
-        queue<pair<int, int>> Q;
-        int arr[100];
-        
-        int answer = 1;
-        
-        for(int j = 0; j < N; j ++)
+        cin >> p;
+        cin >> N;
+        cin >> temp;
+        bool IsChain = false;
+        for(int j = 1; j < temp.size() - 1; j ++)
         {
-            cin >> temp;
-            arr[j] = temp;
-            Q.push(make_pair(temp, j));     //배열과 스택에 차례로 저장
-        }
-        //JD
-        std::sort(arr, arr + N);        //배열을 정렬
-        
-        int arrcount = N - 1;           //가장 큰 값부터 시작
-        
-        while(!Q.empty())               //큐가 빌 때 까지
-        {
-            
-            if(Q.front().first == arr[arrcount])    //가장 큰 순서대로 pop을 한다. 큐의 앞부분이 오름차순이 아니라면 뒤로 보낸다.
+            if('0' <= temp[j] && temp[j] <= '9')        //현재값이 숫자이고
             {
-                if(Q.front().second == M)           //순서가 맞고 해당 큐의 second가 찾고자 하는 M순서의 값이라면
+                if('0' <= temp[j + 1] && temp[j + 1] <= '9')        //연속될 경우
                 {
-                    cout << answer << "\n";         //해당 번째의 pop횟수를 출력한다.
+                    int num = temp[j] - '0';
+                    num *= 10;
+                    num += temp[j + 1] - '0';
+                    temp[j + 1] = num;
+                    IsChain = true;
+                }
+                else        //연속되지 않을 경우
+                {
+                    if(IsChain)
+                        D.push_back(temp[j]);
+                    else
+                        D.push_back(temp[j] - '0');
+                }
+            }
+            else                                    //현재값이 숫자가 아닐 경우
+            {
+                
+            }
+        }
+        
+        bool StartFront = true;
+        bool IsError = false;
+        
+        for(int j = 0; j < p.size(); j ++)
+        {
+            if(p[j] == 'R')
+            {
+                if(StartFront)
+                    StartFront = false;
+                else
+                    StartFront = true;
+            }
+            else if(p[j] == 'D')
+            {
+                if(D.empty())
+                {
+                    IsError = true;
                     break;
                 }
-                else                                //순서는 맞지만 찾고자 하는 순서의 값이 아니라면(값만 같고 순서가 틀릴경우)
-                {
-                    Q.pop();                        //pop하고 출력 횟수를 증가시킨다.
-                    answer ++;
-                    arrcount --;
-                }
-            }
-            else                                    //뒤로 보낸다.
-            {
-                Q.push(make_pair(Q.front().first, Q.front().second));
-                Q.pop();
+                
+                if(StartFront)
+                    D.pop_front();
+                else
+                    D.pop_back();
             }
         }
+        
+        if(IsError)
+            cout << "error\n";
+        
+        else
+        {
+            cout << "[";
+            while(!D.empty())
+            {
+                if(StartFront)
+                {
+                    cout << D.front();
+                    D.pop_front();
+                }
+                else
+                {
+                    cout << D.back();
+                    D.pop_back();
+                }
+                
+                
+                if(D.size() != 0)
+                    cout << ",";
+            }
+            cout << "]\n";
+        }
+        D.clear();
     }
+    
 }
+
