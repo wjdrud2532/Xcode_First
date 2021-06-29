@@ -53,6 +53,7 @@
 		A5257DDA261AEE2D00CCF021 /* 4344.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DD9261AEE2D00CCF021 /* 4344.cpp */; };
 		A5257DDE261B199A00CCF021 /* 2577.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DDD261B199A00CCF021 /* 2577.cpp */; };
 		A528AD63265E946700989864 /* 1932.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528AD62265E946700989864 /* 1932.cpp */; };
+		A529C86F268BCE0E00A6DABE /* 5430.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A529C86E268BCE0E00A6DABE /* 5430.cpp */; };
 		A52E85F52615FC1500AB2907 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A52E85F42615FC1500AB2907 /* main.cpp */; };
 		A5301DCA262D910200E686A6 /* 10250.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5301DC9262D910200E686A6 /* 10250.cpp */; };
 		A531C80A263C938200B5A05F /* 3053.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A531C809263C938200B5A05F /* 3053.cpp */; };
@@ -202,6 +203,7 @@
 		A5257DD9261AEE2D00CCF021 /* 4344.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 4344.cpp; sourceTree = "<group>"; };
 		A5257DDD261B199A00CCF021 /* 2577.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2577.cpp; sourceTree = "<group>"; };
 		A528AD62265E946700989864 /* 1932.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1932.cpp; sourceTree = "<group>"; };
+		A529C86E268BCE0E00A6DABE /* 5430.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 5430.cpp; sourceTree = "<group>"; };
 		A52E85F12615FC1500AB2907 /* Xcode_First */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Xcode_First; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52E85F42615FC1500AB2907 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A5301DC9262D910200E686A6 /* 10250.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 10250.cpp; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				A59AC23A2683D6D300737BE3 /* 1966.cpp */,
 				A59AC23C2688F85B00737BE3 /* 10866.cpp */,
 				A59AC23E2688F88000737BE3 /* 1021.cpp */,
+				A529C86E268BCE0E00A6DABE /* 5430.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -534,7 +537,7 @@
 		A52E85E92615FC1500AB2907 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					A5257DBA261AE19900CCF021 = {
 						CreatedOnToolsVersion = 12.4;
@@ -587,6 +590,7 @@
 			files = (
 				A5213AEF26712C5800E47E0D /* 1037.cpp in Sources */,
 				A5F7DEC0266ED1AB0026CA71 /* 1931.cpp in Sources */,
+				A529C86F268BCE0E00A6DABE /* 5430.cpp in Sources */,
 				A5150F7B2662DAAC006F9537 /* 1463-다시.cpp in Sources */,
 				A53CD7CB267F972700B7E342 /* 9375.cpp in Sources */,
 				A5213AF126715DE200E47E0D /* 2609.cpp in Sources */,
@@ -712,6 +716,7 @@
 		A5257DC0261AE19900CCF021 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -722,6 +727,7 @@
 		A5257DC1261AE19900CCF021 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -843,6 +849,7 @@
 		A52E85F92615FC1500AB2907 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -853,6 +860,7 @@
 		A52E85FA2615FC1500AB2907 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -863,6 +871,7 @@
 		A5D57C4E26535C1A0099E32C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -874,6 +883,7 @@
 		A5D57C4F26535C1A0099E32C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -885,6 +895,7 @@
 		A5E777DA26535E150047CC01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -896,6 +907,7 @@
 		A5E777DB26535E150047CC01 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D73P27WJ9D;
 				ENABLE_HARDENED_RUNTIME = YES;
