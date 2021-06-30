@@ -1,3 +1,10 @@
+//
+//  2630.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/07/01.
+//
+
 #include <iostream>
 #include <algorithm>
 
