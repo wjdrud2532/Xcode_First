@@ -7,7 +7,7 @@ using std::ios_base;
 
 int N;
 int OneCount = 0, ZeroCount = 0;
-int arr[128][128];
+char arr[64][64];
 
 void quad(int x, int y, int N)
 {
@@ -19,7 +19,7 @@ void quad(int x, int y, int N)
                 tempCount++;
     
     if (!tempCount)     //만약 blue값을 얻지 못했다면 모두 0인 White이므로 ZeroCount 를 ++ 한다.
-        ZeroCount++;
+        ZeroCount++;//
     else if
         (tempCount == N * N) OneCount++; // tempCount의 값이 사각형의 개수와 같다면 모두 1이므로 ++한다.
     else {                                  //값이 섞여 있다면 사분면으로 나누어 계산을 다시 진행한다.
