@@ -55,6 +55,8 @@
 		A5257DDE261B199A00CCF021 /* 2577.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5257DDD261B199A00CCF021 /* 2577.cpp */; };
 		A528AD63265E946700989864 /* 1932.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528AD62265E946700989864 /* 1932.cpp */; };
 		A529C86F268BCE0E00A6DABE /* 5430.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A529C86E268BCE0E00A6DABE /* 5430.cpp */; };
+		A529CB33269B49CE001537E6 /* 2740.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A529CB32269B49CE001537E6 /* 2740.cpp */; };
+		A529CB35269B9321001537E6 /* 10830.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A529CB34269B9321001537E6 /* 10830.cpp */; };
 		A52E85F52615FC1500AB2907 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A52E85F42615FC1500AB2907 /* main.cpp */; };
 		A5301DCA262D910200E686A6 /* 10250.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5301DC9262D910200E686A6 /* 10250.cpp */; };
 		A531C80A263C938200B5A05F /* 3053.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A531C809263C938200B5A05F /* 3053.cpp */; };
@@ -209,6 +211,8 @@
 		A5257DDD261B199A00CCF021 /* 2577.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2577.cpp; sourceTree = "<group>"; };
 		A528AD62265E946700989864 /* 1932.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1932.cpp; sourceTree = "<group>"; };
 		A529C86E268BCE0E00A6DABE /* 5430.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 5430.cpp; sourceTree = "<group>"; };
+		A529CB32269B49CE001537E6 /* 2740.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2740.cpp; sourceTree = "<group>"; };
+		A529CB34269B9321001537E6 /* 10830.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 10830.cpp; sourceTree = "<group>"; };
 		A52E85F12615FC1500AB2907 /* Xcode_First */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Xcode_First; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52E85F42615FC1500AB2907 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A5301DC9262D910200E686A6 /* 10250.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 10250.cpp; sourceTree = "<group>"; };
@@ -428,6 +432,8 @@
 				A5321D1726921E28003D119C /* 1992.cpp */,
 				A5321D19269226FC003D119C /* 1780.cpp */,
 				A5321D1B2692311B003D119C /* 1629.cpp */,
+				A529CB32269B49CE001537E6 /* 2740.cpp */,
+				A529CB34269B9321001537E6 /* 10830.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				A5213AF126715DE200E47E0D /* 2609.cpp in Sources */,
 				A555C4852648145300F09E00 /* 18870_Again.cpp in Sources */,
 				A520376526421EFE0040A661 /* 2750.cpp in Sources */,
+				A529CB35269B9321001537E6 /* 10830.cpp in Sources */,
 				A5321D1826921E28003D119C /* 1992.cpp in Sources */,
 				A51E9A4F262AE26900048710 /* 1193.cpp in Sources */,
 				A51333DD2654278700F1713D /* 15650.cpp in Sources */,
@@ -654,6 +661,7 @@
 				A5150F792662B941006F9537 /* 2579-다시.cpp in Sources */,
 				A518EC4826366160004AFC3E /* 2581.cpp in Sources */,
 				A558D57B264572C900DF75C9 /* 1427.cpp in Sources */,
+				A529CB33269B49CE001537E6 /* 2740.cpp in Sources */,
 				A53CD7CD267FAE8700B7E342 /* 1676.cpp in Sources */,
 				A53CD7D5267FE3FC00B7E342 /* 9012.cpp in Sources */,
 				A51E9A43262A7FD600048710 /* 2941.cpp in Sources */,
