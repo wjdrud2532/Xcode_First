@@ -1,3 +1,10 @@
+//
+//  10816.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/07/15.
+//
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -6,10 +13,12 @@ using std::cin;
 using std::cout;
 using std::ios_base;
 using std::vector;
+using std::upper_bound;
+using std::lower_bound;
 
 int N;
 //
-//int lower_binary(int * V, int SearchNum)
+//int lower_binary(vector<int> V, int SearchNum)
 //{
 //    int mid, start = 0, end = N - 1;
 //
@@ -20,10 +29,10 @@ int N;
 //               end = mid;
 //           else start = mid + 1;
 //    }
-//       return end;
+//       return end + 1;
 //}
 //
-//int upper_binary(int * V, int SearchNum)
+//int upper_binary(vector<int> V, int SearchNum)
 //{
 //    int mid, start = 0, end = N - 1;
 //
@@ -34,7 +43,7 @@ int N;
 //            end = mid;
 //        else start = mid + 1;
 //    }
-//    return end;
+//    return end + 1;
 //}
 
 int main()
@@ -44,40 +53,28 @@ int main()
     ios_base::sync_with_stdio(false);
     
     int M;
-    int temp1, temp2, temp3;
-    int NV[500000], MV[500000], Answer[500000];
+    int temp1, temp2;
+    vector<int> NV, MV;
     
     cin >> N;
     for(int i = 0; i < N; i ++)
     {
         cin >> temp1;
-        NV[i] = temp1;
+        NV.push_back(temp1);
     }
     
-    std::sort(NV, NV + N);
+    std::sort(NV.begin(), NV.end());
     
     cin >> M;
     for(int i = 0; i < M; i ++)
     {
         cin >> temp1;
-        
-        MV[i] = temp1;
+        temp2 = (upper_bound(NV.begin(), NV.end(), temp1) - lower_bound(NV.begin(), NV.end(), temp1));
+                            //Implicit conversion loses integer precision: 'decltype(__x.base() - __y.base())' (aka 'long') to 'int' -> 암시적 형변환은 정수 정밀도를 잃습니다
+        MV.push_back(temp2);
     }
     
     for(int i = 0; i < M; i ++)
-    {
-        
-        temp2 = std::upper_bound(<#_ForwardIterator __first#>, <#_ForwardIterator __last#>, <#const _Tp &__value_#>, <#_Compare __comp#>)
-        temp3 = lower_binary(NV, MV[i]);
-        temp1 = temp2 - temp3;
-        
-        if (temp2 == N - 1 && NV[N - 1] == MV[i])
-            temp1 ++;
-       
-        Answer[i] = temp1;
-    }
-    
-    for(int i = 0; i < M; i ++)
-        cout << Answer[i] << " ";
+        cout << MV[i] << " ";
     
 }

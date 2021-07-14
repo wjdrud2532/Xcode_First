@@ -120,6 +120,10 @@
 		A5E777DD26535E390047CC01 /* Test111.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E777DC26535E390047CC01 /* Test111.cpp */; };
 		A5F7DEBE266E717B0026CA71 /* 11047.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5F7DEBD266E717B0026CA71 /* 11047.cpp */; };
 		A5F7DEC0266ED1AB0026CA71 /* 1931.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5F7DEBF266ED1AB0026CA71 /* 1931.cpp */; };
+		A5F963BD269C8B5400141368 /* 11444.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5F963BC269C8B5400141368 /* 11444.cpp */; };
+		A5F963BF269CA9C800141368 /* 6549_미해결.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5F963BE269CA9C800141368 /* 6549_미해결.cpp */; };
+		A5F963C1269F538E00141368 /* 1920.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5F963C0269F538E00141368 /* 1920.cpp */; };
+		A5F963C3269F8E2700141368 /* 10816.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5F963C2269F8E2700141368 /* 10816.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -280,6 +284,10 @@
 		A5E777DC26535E390047CC01 /* Test111.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test111.cpp; sourceTree = "<group>"; };
 		A5F7DEBD266E717B0026CA71 /* 11047.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11047.cpp; sourceTree = "<group>"; };
 		A5F7DEBF266ED1AB0026CA71 /* 1931.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1931.cpp; sourceTree = "<group>"; };
+		A5F963BC269C8B5400141368 /* 11444.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11444.cpp; sourceTree = "<group>"; };
+		A5F963BE269CA9C800141368 /* 6549_미해결.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "6549_미해결.cpp"; sourceTree = "<group>"; };
+		A5F963C0269F538E00141368 /* 1920.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1920.cpp; sourceTree = "<group>"; };
+		A5F963C2269F8E2700141368 /* 10816.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 10816.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +442,10 @@
 				A5321D1B2692311B003D119C /* 1629.cpp */,
 				A529CB32269B49CE001537E6 /* 2740.cpp */,
 				A529CB34269B9321001537E6 /* 10830.cpp */,
+				A5F963BC269C8B5400141368 /* 11444.cpp */,
+				A5F963BE269CA9C800141368 /* 6549_미해결.cpp */,
+				A5F963C0269F538E00141368 /* 1920.cpp */,
+				A5F963C2269F8E2700141368 /* 10816.cpp */,
 			);
 			path = BAEKJOON;
 			sourceTree = "<group>";
@@ -611,6 +623,7 @@
 				A529C86F268BCE0E00A6DABE /* 5430.cpp in Sources */,
 				A5150F7B2662DAAC006F9537 /* 1463-다시.cpp in Sources */,
 				A523D0BF268D1B9F002B3281 /* 2630.cpp in Sources */,
+				A5F963BF269CA9C800141368 /* 6549_미해결.cpp in Sources */,
 				A53CD7CB267F972700B7E342 /* 9375.cpp in Sources */,
 				A5213AF126715DE200E47E0D /* 2609.cpp in Sources */,
 				A555C4852648145300F09E00 /* 18870_Again.cpp in Sources */,
@@ -662,6 +675,7 @@
 				A518EC4826366160004AFC3E /* 2581.cpp in Sources */,
 				A558D57B264572C900DF75C9 /* 1427.cpp in Sources */,
 				A529CB33269B49CE001537E6 /* 2740.cpp in Sources */,
+				A5F963BD269C8B5400141368 /* 11444.cpp in Sources */,
 				A53CD7CD267FAE8700B7E342 /* 1676.cpp in Sources */,
 				A53CD7D5267FE3FC00B7E342 /* 9012.cpp in Sources */,
 				A51E9A43262A7FD600048710 /* 2941.cpp in Sources */,
@@ -689,6 +703,7 @@
 				A59AC2332682536F00737BE3 /* 17298.cpp in Sources */,
 				A59816D0263AC80E0074B581 /* 3009.cpp in Sources */,
 				A558D57D26458AFF00DF75C9 /* 11650.cpp in Sources */,
+				A5F963C1269F538E00141368 /* 1920.cpp in Sources */,
 				A557510D261B212B002CBFF7 /* 1712.cpp in Sources */,
 				A5134B562620796E00C3867C /* 3052.cpp in Sources */,
 				A52E85F52615FC1500AB2907 /* main.cpp in Sources */,
@@ -715,6 +730,7 @@
 				A542E7DD265C1778002E8078 /* 1003.cpp in Sources */,
 				A53CD7D3267FE1CC00B7E342 /* 10773.cpp in Sources */,
 				A52188D12629AA100091849C /* 2675.cpp in Sources */,
+				A5F963C3269F8E2700141368 /* 10816.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
