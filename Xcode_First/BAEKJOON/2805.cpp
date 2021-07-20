@@ -1,3 +1,10 @@
+//
+//  2805.cpp
+//  Xcode_First
+//
+//  Created by 한정경 on 2021/07/21.
+//
+//1654랑 거의 같은 코드
 
 #include <iostream>
 #include <algorithm>
@@ -54,4 +61,5 @@ int main()
     }
     
     cout << BinarySearch(0, max1) << "\n";
+    //이것도 시작을 0으로 해야한다.
 }

@@ -17,7 +17,8 @@ using std::upper_bound;
 using std::lower_bound;
 
 int N;
-//
+//이거 사용하는 것 보다 stl사용하는게 약간 더 빠르다
+//배열보다 벡터가 더 빠르게 나왔다.
 //int lower_binary(vector<int> V, int SearchNum)
 //{
 //    int mid, start = 0, end = N - 1;
