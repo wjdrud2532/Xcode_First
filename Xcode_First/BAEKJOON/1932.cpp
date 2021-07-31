@@ -26,7 +26,6 @@ int main()
     std::ios_base :: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    //있으면 12ms 없으면 44ms 가 나온다.
     
     int arr[501][501];
     int N;
@@ -35,27 +34,32 @@ int main()
     
     cin >> arr[1][0];
     
-    for(int i = 2; i <= N; i ++)
+    if(N == 1)                      //1일 경우 그대로 출력
+        cout << arr[1][0] << "\n";
+    else                            //1이 아닐 경우
     {
-        for(int j = 0; j < i; j ++)
+        for(int i = 2; i <= N; i ++)    //1은 위에서 입력 되었으므로 2부터 시작
         {
-            cin >> arr[i][j];
-            
-            if(j == 0)
-                arr[i][j] += arr[i - 1][j];
-            
-            else if(j == i - 1)
-                arr[i][j] += arr[i - 1][j - 1];
-            
-            else
-                arr[i][j] += max(arr[i - 1][j - 1], arr[i - 1][j]);
-
-            
-            if(arr[i][j] > Max)
-                Max = arr[i][j];
+            for(int j = 0; j < i; j ++) //2번째 줄은 2개의 입력을 받으므로 i개수만큼 입력받는다.
+            {
+                cin >> arr[i][j];
+                
+                if(j == 0)
+                    arr[i][j] += arr[i - 1][j];
+                
+                else if(j == i - 1)
+                    arr[i][j] += arr[i - 1][j - 1];
+                
+                else
+                    arr[i][j] += max(arr[i - 1][j - 1], arr[i - 1][j]);
+                
+                
+                if(arr[i][j] > Max) //현재값이 이전의 Max값보다 크다면 저장.
+                    Max = arr[i][j];
+            }
         }
+        
+        cout << Max << "\n";    //출력
     }
-    
-    cout << Max << "\n";
-    
 }
+
