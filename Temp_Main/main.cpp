@@ -14,15 +14,13 @@ int main()
     cout.tie(NULL);
     
     int N;
-    priority_queue<int> Q;
-    
     cin >> N;
+    priority_queue< int, std::vector<int>, std::greater<int> > Q;
     
     int temp;
     for(int i = 0; i < N; i ++)
     {
         cin >> temp;
-        
         if(temp == 0)
         {
             if(Q.empty())
@@ -39,5 +37,4 @@ int main()
         }
         
     }
-    
 }
