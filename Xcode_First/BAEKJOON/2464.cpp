@@ -34,7 +34,7 @@ int abs(int x)
 
 void push(int x)
 {
-    absheap[++Hsize] = x;
+    absheap[++Hsize] = x;       //1부터 시작
     
     int child = Hsize;
     int parent = child / 2;
