@@ -12,7 +12,8 @@ int main()
 {
     int N;
     queue<int> Q;
-    
+    cout << "aaa\n";
+
     cin >> N;
     
     for(int i = 1; i <= N; i ++)
@@ -28,6 +29,7 @@ int main()
         Q.pop();
     }
     
-    cout << Q.front();
     
+    cout << Q.front();
+    //a
 }
