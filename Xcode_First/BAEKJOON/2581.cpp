@@ -60,3 +60,51 @@ int main()
         cout << PrimeNumberSum << "\n" << MostSmallPrimeNumber << endl;
     
 }
+
+
+/*
+ #include <iostream>
+ #include <cmath>
+
+ using std::cout;
+ using std::cin;
+
+ using std::sqrt;
+
+ int main()
+ {
+     int Start, End, Sum = 0, Min = 10000;
+     bool isPNum = true;
+     
+     cin >> Start >> End;
+     
+     for(int i = Start; i <= End; i ++)
+     {
+         for(int j = 2; j <= sqrt(i); j ++)
+         {
+             if(i % j == 0)
+             {
+                 isPNum = false;
+                 break;
+             }
+         }
+         
+         if(i != 1 && isPNum)
+         {
+             if(Min > i)
+                 Min = i;
+             
+             Sum += i;
+         }
+         
+         isPNum = true;
+     }
+     
+     if(Sum == 0)
+         cout << "-1\n";
+     else
+         cout << Sum << "\n" << Min << "\n";
+     
+ }
+
+ */
