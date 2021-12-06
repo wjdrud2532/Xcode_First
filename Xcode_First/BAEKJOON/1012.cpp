@@ -5,6 +5,26 @@
 //  Created by 한정경 on 2021/11/27.
 //
 
+/*
+ 이런 식으로 할 수도 있다
+        찾고자 하는 범위가 넓다면 이 방식을 써야한다
+ 
+ int dx[4] = { 0,0,-1,1 };
+ int dy[4] = { -1,1,0,0 };
+ void DFS(int i, int j)
+ {
+     map[i][j] = false;
+     for (int d = 0; d < 4; d++)
+ {
+         int y = i + dy[d];
+         int x = j + dx[d];
+ 
+         if (map[y][x])
+            DFS(y, x);
+     }
+ }
+ */
+
 #include <iostream>
 
 using std::cin;
