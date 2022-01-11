@@ -1,9 +1,0 @@
-/*
-
-
-
-drthtdrh
-tdr
-ht
-srh
-*/
