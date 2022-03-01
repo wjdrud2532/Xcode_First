@@ -1,11 +1,19 @@
 #include <iostream>
+#include <cstring>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::string;
 
 int main()
 {
-	int a;
-	cin >> a;
+	string str;
 
-	cout << a;
+	cin >> str;
+
+	cout << str + "??!\n"; 
+
+	
+	return 0;
+		 
 }

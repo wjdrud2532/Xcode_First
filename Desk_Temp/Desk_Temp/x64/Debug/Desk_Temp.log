@@ -1,2 +1,2 @@
-﻿  main.cpp
-  Desk_Temp.vcxproj -> C:\Users\wjdru\OneDrive\바탕 화면\Programing\Xcode_First\Desk_Temp\x64\Debug\Desk_Temp.exe
+﻿test.obj : error LNK2005: main이(가) main.obj에 이미 정의되어 있습니다.
+C:\Users\wjdru\OneDrive\바탕 화면\Programing\Xcode_First\Desk_Temp\x64\Debug\Desk_Temp.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
