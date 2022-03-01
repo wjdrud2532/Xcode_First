@@ -1,5 +1,18 @@
-system("pause");
+Á¤·Ä Ctrl + K > F
 
-ios_base::sync_with_stdio(false);
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::ios_base;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
     cout.tie(nullptr);
     cin.tie(nullptr);
+
+
+    system("pause");
+    return 0;
+}
