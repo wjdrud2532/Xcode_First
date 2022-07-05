@@ -1,12 +1,57 @@
 #include <iostream>
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::string;
+
+bool Alpha[26] = {
+    false,
+};
+int cnt = 0;
+
+bool FindGroupNumber(string str)
+{
+    std::fill_n(Alpha, 25, false);
+
+    for (int i = 0; i < str.size(); i++)
+    {
+        int tempnum = str[i] - 'a';
+
+        if (Alpha[tempnum] == true)
+            return false;
+
+        else
+        {
+            Alpha[tempnum] = true;
+
+            for (; i < str.size(); i++)
+            {
+                if (str[i] != str[i + 1])
+                {
+                    break;
+                }
+            }
+        }
+    }
+
+    //cnt++;
+    return true;
+}
 
 int main()
 {
-    int a = 10;
-    int b = 20;
-    int c = a + b;
+    int num = 0;
+    cin >> num;
 
-    cout << c << endl;
+    string str;
+
+    for (int i = 0; i < num; i++)
+
+    {
+        cin >> str;
+        if(FindGroupNumber(str))
+            cnt ++;
+    }
+
+    cout << cnt;
 }
