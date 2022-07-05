@@ -11,7 +11,7 @@ int cnt = 0;
 
 bool FindGroupNumber(string str)
 {
-    std::fill_n(Alpha, 25, false);
+    std::fill_n(Alpha, 26, false);
 
     for (int i = 0; i < str.size(); i++)
     {
