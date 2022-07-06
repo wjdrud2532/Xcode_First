@@ -33,17 +33,8 @@ int main()
     cout.tie(nullptr);
     cin.tie(nullptr);
 
-    char n[1001];
-    char m[1001];
-    char result[1001];
-
-    cin >> n >> m;
-
-    divided(n, m, result);
-
-    for (int i = 0; i < 5; i++)
-        cout << n[i] << "";
-
-    system("pause");
+    /*
+    aesfeasfewafawefw
+    */
     return 0;
 }
