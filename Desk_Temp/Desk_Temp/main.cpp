@@ -1,40 +1,53 @@
 #include <iostream>
-#include <cstring>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
-using std::strlen;
-using std::strcpy;
 
-void divided(char* n, char* m, char* result)
+void FindRoomNumber(int H, int W, int N)
 {
-    int tempn = strlen(n);
-    int tempm = strlen(m);
+	int temp1 = N / H;
+	int temp2 = N % H;
 
-    //둘 중 m이 더 자리수가 적을테니 m의 자리수만큼 계산한다.
-    for (int i = tempn, j = tempm; j >= 0; i--, j--)
-    {
-        n[i] = n[i] - m[i] + '0';
+	int Dong = (N - 1) / H + 1; ;
 
-        if (n[i] <'0')    //수를 가져와야 할 경우
-        {
-            n[i - 1] --;
-            n[i] += 10;
-        }
-    }
+	int Floor = (N - 1) % H + 1;
+	
 
-        
+	cout << Floor;
+
+	cout.width(2); 
+	cout.fill('0'); 
+	cout << Dong << "\n";
+
+	return ;
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cout.tie(nullptr);
-    cin.tie(nullptr);
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
 
-    /*
-    aesfeasfewafawefw
-    */
-    return 0;
+	int T;
+	int H, W, N;
+
+	cin >> T;
+
+	for (int i = 0; i < T; i++)
+	{
+		cin >> H >> W >> N;
+		FindRoomNumber(H, W, N);
+	}
+
+	return 0;
 }
+
+/*
+	N이 주어진다
+	H의 높이로 우선해서 나눈다. 
+	그럼 H = 6일 때 6으로 나눠야 한다
+
+	6으로 나눈 몫이 W의 시작 지점이고 1층의 N번 째 방이 된다
+	나머지는 층 수가 된다
+*/
