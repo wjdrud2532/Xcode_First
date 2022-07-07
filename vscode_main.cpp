@@ -1,57 +1,48 @@
 #include <iostream>
+#include <vector>
 
 using std::cin;
 using std::cout;
-using std::string;
+using std::ios_base;
+using std::vector;
 
-bool Alpha[26] = {
-    false,
-};
-int cnt = 0;
+int Apt[15][15];
 
-bool FindGroupNumber(string str)
+void MakeNumberOfPeople()
 {
-    std::fill_n(Alpha, 26, false);
-
-    for (int i = 0; i < str.size(); i++)
+    for (int i = 0; i < 15; i++)
     {
-        int tempnum = str[i] - 'a';
-
-        if (Alpha[tempnum] == true)
-            return false;
-
-        else
-        {
-            Alpha[tempnum] = true;
-
-            for (; i < str.size(); i++)
-            {
-                if (str[i] != str[i + 1])
-                {
-                    break;
-                }
-            }
-        }
+        Apt[0][i] = i;
+        Apt[i][1] = 1;
     }
 
-    //cnt++;
-    return true;
+    for (int i = 1; i < 15; i++)    //층
+    {
+        for (int j = 2; j < 15; j++)    //호수
+        {
+            Apt[i][j] = Apt[i][j - 1] + Apt[i - 1][j];
+        }
+    }
+    return;
 }
 
 int main()
 {
-    int num = 0;
-    cin >> num;
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
 
-    string str;
+    int T, K, n;
 
-    for (int i = 0; i < num; i++)
+    cin >> T;
 
+    MakeNumberOfPeople();
+
+    for (int i = 0; i < T; i++)
     {
-        cin >> str;
-        if(FindGroupNumber(str))
-            cnt ++;
+        cin >> K >> n;
+        cout << Apt[K][n] << "\n";
     }
 
-    cout << cnt;
+    return 0;
 }
