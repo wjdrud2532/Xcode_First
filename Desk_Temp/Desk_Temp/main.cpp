@@ -1,60 +1,46 @@
 #include <iostream>
-#include <vector>
+#include <cmath>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
-using std::vector;
+using std::sqrt;
 
-int CntBag(int N)
+
+bool IsPNumber (int N)
 {
-    //먼저 3과 5로 나눌 수 있는지 확인한다
-    //5로 나눴을 때 나머지가 0인 경우
-    //              나머지가 1인 경우  5를 하나 빼면 6이 되므로 나눌 수 있음
-    //              나머지가 2인 경우  5를 두 개 빼면 12가 되므로 나눌 수 있음
-    //              나머지가 3인 경우  바로 3으로 나눌 수 있음
-    //              나머지가 4인 경우  5를 하나 빼면 9가 되므로 나눌 수 있음
- 
-    int Count;
+	if (N == 1)
+		return false;
 
-    if (N < 5)
-    {
-        if (N == 3)
-            return 1;
-        else
-            return -1;
-    }
+	for (int i = 2; i <= sqrt(N); i++)
+	{
+		if (N % i == 0)
+			return false;
+	}
 
-    Count = N / 5;
-    N %= 5;
-
-    if (N == 0)
-        return Count;
-
-    else if (N == 1 || N == 3)
-        return Count + 1;
-
-    else if (N == 4)
-        return Count + 2;
-
-    else if (N == 2 && Count >= 2)
-        return Count + 2;
-
-    else
-        return -1;
+	
+	return true;
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
 
-    int N;
+	int N, PNumCnt = 0;
 
-    cin >> N;
+	cin >> N;
 
-    cout << CntBag(N) << "\n";
+	int tempNum;
+	for (int i = 0; i < N; i++)
+	{
+		cin >> tempNum;
+		if (IsPNumber(tempNum) == true)
+			PNumCnt++;
+	}
+	
+	cout << PNumCnt << "\n";
 
-    return 0;
+	return 0;
 }
