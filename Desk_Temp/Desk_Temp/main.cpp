@@ -5,9 +5,12 @@ using std::cin;
 using std::cout;
 using std::ios_base;
 using std::sqrt;
+using std::fill_n;
+
+bool* IsPNum;
 
 
-bool IsPNumber (int N)
+bool IsPNumber(int N)
 {
 	if (N == 1)
 		return false;
@@ -18,8 +21,43 @@ bool IsPNumber (int N)
 			return false;
 	}
 
-	
 	return true;
+}
+
+
+void Eratos(int M, int N)
+{
+	fill_n(IsPNum, N, true);
+	IsPNum[0] == IsPNum[1] == false;
+
+	for (int i = 2; i <= N; i++)
+	{
+		if (IsPNumber(i) == true)
+		{
+			for (int j = i * 2; j <= N; j += i)
+			{
+				IsPNum[j] = false;
+			}
+		}
+	}
+
+	return;
+}
+
+void PrintPNumber(int M, int N)
+{
+	if (M <= 2)
+		M = 2;
+
+	for (int i = M; i <= N; i++)
+	{
+		if (IsPNum[i] == true)
+		{
+			cout << i << "\n";
+		}
+	}
+
+	return;
 }
 
 int main()
@@ -28,19 +66,14 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	int N, PNumCnt = 0;
+	int N, M;
 
-	cin >> N;
+	cin >> M >> N;
+	IsPNum = new bool[++N];
 
-	int tempNum;
-	for (int i = 0; i < N; i++)
-	{
-		cin >> tempNum;
-		if (IsPNumber(tempNum) == true)
-			PNumCnt++;
-	}
-	
-	cout << PNumCnt << "\n";
+	Eratos(M, N);
+
+	PrintPNumber(M, N);
 
 	return 0;
 }

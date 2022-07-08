@@ -29,7 +29,7 @@ void Eratos(int M, int N)
 {
 	fill_n(IsPNum, N, true);
 
-	for (int i = 2; i <= N; i++)
+	for (int i = 2; i <= sqrt(N); i++)		//에라토스테네스에서 범위의 루트까지 계산하면 범위까지 알 수 있다
 	{
 		if (IsPNum[i] == true && IsPNumber(i) == true)
 		{
