@@ -68,21 +68,39 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	IsPNum = new bool[123456 * 2];
-	Eratos(1, 123456 * 2);
+	IsPNum = new bool[10000];
+	Eratos(1, 10000);
 
-	int N, M;
+	int T;
+	int n;
+	int temp = 0;
+	int temp2 = 0;
 
-	cin >> M;
-	
+	cin >> T;
 
-	while (M != 0)
+	for (int i = 0; i < T; i++)
 	{
-		N = M * 2;
+		cin >> n;
+		temp = n / 2;
+		if (IsPNum[temp] == true)
+			cout << temp << " " << temp << "\n";
+		else
+		{
+			temp2 = temp;
+			while (1)
+			{
+				temp2--;
+				temp++;
+				if (IsPNum[temp2] == true && IsPNum[temp] == true)
+				{
 
-		cout << PrintPNumber(++M, N) << "\n";
+					cout << temp2 << " " << temp << "\n";
+					break;
+				}
+			}
+		}
 
-		cin >> M;
+
 	}
 
 
