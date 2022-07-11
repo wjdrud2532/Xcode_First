@@ -1,109 +1,49 @@
 #include <iostream>
-#include <cmath>
+#include <cstring>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
-using std::sqrt;
-using std::fill_n;
+using std::string;
 
-bool* IsPNum;
-
-
-bool IsPNumber(int N)
+string Recursion(int start, int N)
 {
-	if (N == 1)
-		return false;
+	string temp = "";
+	for (int i = 0; i < start; i++)
+		temp += "----";
 
-	for (int i = 2; i <= sqrt(N); i++)
+	
+
+	if (start == N)
 	{
-		if (N % i == 0)
-			return false;
+		cout << temp << "\"재귀함수가 뭔가요?\"\n";
+		cout << temp << "\"재귀함수는 자기 자신을 호출하는 함수라네\"\n";
+		return temp + "라고 답변하였지.\n";
 	}
-
-	return true;
-}
-
-
-void Eratos(int M, int N)
-{
-	fill_n(IsPNum, N, true);
-
-	for (int i = 2; i <= sqrt(N); i++)		//에라토스테네스에서 범위의 루트까지 계산하면 범위까지 알 수 있다
+	else
 	{
-		if (IsPNum[i] == true && IsPNumber(i) == true)
-		{
-			for (int j = i * 2; j <= N; j += i)
-			{
-				IsPNum[j] = false;
-			}
-		}
+		cout << temp << "\"재귀함수가 뭔가요?\"\n";
+		cout << temp << "\"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.\n";
+		cout << temp << "마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.\n";
+		cout << temp << "그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어.\"\n";
+
+		return Recursion(++start, N) + temp + "라고 답변하였지.\n";
 	}
-
-	return;
-}
-
-int PrintPNumber(int M, int N)
-{
-	if (M <= 2)
-		M = 2;
-
-	int cnt = 0;
-
-	for (int i = M; i <= N; i++)
-	{
-		if (IsPNum[i] == true)
-		{
-			cnt++;
-			//cout << i << "\n";
-		}
-	}
-
-	return cnt;
 }
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
+	//ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	IsPNum = new bool[10000];
-	Eratos(1, 10000);
+	int N;
 
-	int T;
-	int n;
-	int temp = 0;
-	int temp2 = 0;
+	cin >> N;
 
-	cin >> T;
+	cout << "어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.\n";
 
-	for (int i = 0; i < T; i++)
-	{
-		cin >> n;
-		temp = n / 2;
-		if (IsPNum[temp] == true)
-			cout << temp << " " << temp << "\n";
-		else
-		{
-			temp2 = temp;
-			while (1)
-			{
-				temp2--;
-				temp++;
-				if (IsPNum[temp2] == true && IsPNum[temp] == true)
-				{
-
-					cout << temp2 << " " << temp << "\n";
-					break;
-				}
-			}
-		}
-
-
-	}
-
-
+	cout <<	Recursion(0, N) << "\n";
 
 	return 0;
 }
