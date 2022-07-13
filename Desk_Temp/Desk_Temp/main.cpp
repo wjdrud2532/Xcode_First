@@ -10,7 +10,7 @@ string Recursion(int start, int N)
 {
 	string temp = "";
 	for (int i = 0; i < start; i++)
-		temp += "----";
+		temp += "____";
 
 	
 
@@ -33,7 +33,7 @@ string Recursion(int start, int N)
 
 int main()
 {
-	//ios_base::sync_with_stdio(false);
+	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
