@@ -1,48 +1,32 @@
-#include <iostream>
-
-using std::cin;
-using std::cout;
-using std::ios_base;
-
-void sort()
-{
-    int N, arr[50][3];
-    int weight, height;
-
-    cin >> N;
-
-    for(int i = 0; i < N; i ++)
-    {
-        cin >> weight >> height;
-
-        arr[i][0] = weight;
-        arr[i][1] = height;
-        arr[i][2] = 1;
-
-        for(int j = 0; j < i; j ++)
-        {
-            if(arr[j][0] > arr[i][0] && arr[j][1] > arr[i][1])
-                arr[i][2] += 1;
-            else if(arr[j][0] < arr[i][0] && arr[j][1] < arr[i][1])
-                arr[j][2] += 1;
-        }
-    }
-
-    for(int i = 0; i < N; i ++)
-    {
-        cout << arr[i][2] << " ";
-    }
-
-    return;
-}
-
+#include <stdio.h>
+#include <stdlib.h>
+int M, N, r = 2500;
+char s[51][51];
 int main()
 {
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    ios_base::sync_with_stdio(false);
+    scanf("%d%d", &N, &M);
+    for (int i = 0; i < N; ++i)
+        scanf("%s", s[i]);
 
-    sort();
+    for (int i = 0; i < N - 7; ++i)
+    {
+        for (int j = 0; j < M - 7; ++j)
+        {
 
-    return 0;
+
+            int a = 0, b = 0;
+            for (int x = 0; x < 8; ++x)
+                for (int y = 0; y < 8; ++y)
+                {
+                    if ((x + y) % 2)    //짝수일 때
+                        a += s[i + x][j + y] == 'B';        //상대적인 좌표가 B라면
+                    else
+                        b += s[i + x][j + y] == 'B';
+                }
+            a = 32 - abs(a - b);
+            if (r > a)
+                r = a;
+        }
+    }
+    printf("%d", r);
 }
