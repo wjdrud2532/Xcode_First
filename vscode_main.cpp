@@ -1,37 +1,68 @@
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 
 using std::cin;
 using std::cout;
+using std::endl;
+using std::floor;
 using std::ios_base;
-using std::sort;
-using std::greater;
 
 int main()
 {
     ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	cout.tie(nullptr);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
     int N;
-    
+
     cin >> N;
-    
-    int arr[10001] = {0 ,}, temp;
-    
-    for(int i = 0; i < N; i ++)
+
+    int cnt[8001];
+
+    double Sum = 0;
+    int average = 0, temp = 0, flag = 0, max = -5000, min = 5000, mid = -5000, range;
+
+    for (int i = 0; i < N; i++)
     {
         cin >> temp;
-        arr[temp] ++;
+        Sum += temp;
+        cnt[temp + 4000]++;
+
+        if (temp > max)
+            max = temp;
+
+        if (temp < min)
+            min = temp;
+    }
+
+    range = max - min;
+    average = std::round(Sum / N);
+    
+
+    flag = 0;
+    max = 0;
+    
+    for(int i = 0; i < 8001; i ++)
+    {
+        if(cnt[i] > max)
+        {
+            max = cnt[i];
+            flag = i;
+        }
     }
     
-    for(int i = 1; i < 10001; i ++)
+    for(int i = flag + 1; i < 8001; i ++)
     {
-        if(arr[i] != 0)
-            for(int j = 0; j < arr[i]; j ++)
-                cout << i << "\n";
+        if(cnt[i] == max)
+        {
+            flag = i;
+            break;
+        }
     }
 
-   return 0;
+    cout << average << " 11\n";     //산술평균
+    cout << mid << " 22\n";         //중앙값
+    cout << flag - 4000 << " 33\n"; //최빈값
+    cout << range << " 44\n";   //범위
 }
-
