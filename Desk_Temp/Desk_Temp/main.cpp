@@ -1,49 +1,87 @@
 #include <iostream>
-#include <cstring>
+#include <algorithm>
+#include <cmath>
 
 using std::cin;
 using std::cout;
+using std::endl;
+using std::floor;
 using std::ios_base;
-using std::string;
-
-string Recursion(int start, int N)
-{
-	string temp = "";
-	for (int i = 0; i < start; i++)
-		temp += "____";
-
-	
-
-	if (start == N)
-	{
-		cout << temp << "\"재귀함수가 뭔가요?\"\n";
-		cout << temp << "\"재귀함수는 자기 자신을 호출하는 함수라네\"\n";
-		return temp + "라고 답변하였지.\n";
-	}
-	else
-	{
-		cout << temp << "\"재귀함수가 뭔가요?\"\n";
-		cout << temp << "\"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.\n";
-		cout << temp << "마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.\n";
-		cout << temp << "그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어.\"\n";
-
-		return Recursion(++start, N) + temp + "라고 답변하였지.\n";
-	}
-}
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	cout.tie(nullptr);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-	int N;
+    int N;
 
-	cin >> N;
+    cin >> N;
 
-	cout << "어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.\n";
+    int cnt[8001] = {0, };
 
-	cout <<	Recursion(0, N) << "\n";
+    double Sum = 0;
+    int average = 0, temp = 0, flag = 0, max = -5000, min = 5000, mid = -5000, range, count = 0;
 
-	return 0;
+    for (int i = 0; i < N; i++)
+    {
+        cin >> temp;
+        Sum += temp;
+
+        if (cnt[temp + 4000] == 0)
+            count++;
+
+        cnt[temp + 4000]++;
+
+        if (temp > max)
+            max = temp;
+
+        if (temp < min)
+            min = temp;
+    }
+
+    range = max - min;
+    average = std::round(Sum / N);
+
+
+    flag = 0;
+    max = 0;
+
+    for (int i = 0; i < 8001; i++)
+    {
+        if (cnt[i] > max)
+        {
+            max = cnt[i];
+            flag = i;
+        }
+    }
+
+    for (int i = flag + 1; i < 8001; i++)
+    {
+        if (cnt[i] == max)
+        {
+            flag = i;
+            break;
+        }
+    }
+
+    count = 0;
+    for (int i = 0; i < 8001; i++)
+    {
+        count += cnt[i];
+
+        if (count >= (N + 1) / 2)
+        {
+            mid = i - 4000;
+            break;
+        }
+    }
+       
+
+
+
+    cout << average << "\n";     //산술평균
+    cout << mid << "\n";         //중앙값
+    cout << flag - 4000 << "\n"; //최빈값
+    cout << range << "\n";   //범위
 }
