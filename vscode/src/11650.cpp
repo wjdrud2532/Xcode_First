@@ -25,7 +25,7 @@ void sortCoordinate(int N)
     }
 
     return;
-}
+
 
 int main()
 {
