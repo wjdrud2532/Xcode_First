@@ -21,15 +21,12 @@ int main()
     int cnt[8001] = {0, };
 
     double Sum = 0;
-    int average = 0, temp = 0, flag = 0, max = -5000, min = 5000, mid = -5000, range, count = 0;
+    int average = 0, temp = 0, flag = 0, max = -5000, min = 5000, mid = 0, range, count = 0;
 
     for (int i = 0; i < N; i++)
     {
         cin >> temp;
         Sum += temp;
-
-        if (cnt[temp + 4000] == 0)
-            count++;
 
         cnt[temp + 4000]++;
 
@@ -65,7 +62,6 @@ int main()
         }
     }
 
-    count = 0;
     for (int i = 0; i < 8001; i++)
     {
         count += cnt[i];
@@ -78,10 +74,10 @@ int main()
     }
        
 
-
-
     cout << average << "\n";     //»ê¼úÆò±Õ
     cout << mid << "\n";         //Áß¾Ó°ª
     cout << flag - 4000 << "\n"; //ÃÖºó°ª
     cout << range << "\n";   //¹üÀ§
+
+    return 0;
 }
