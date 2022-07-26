@@ -1,12 +1,77 @@
 #include <iostream>
 #include <algorithm>
-#include <cmath>
+#include <cstring>
 
 using std::cin;
 using std::cout;
-using std::endl;
-using std::floor;
 using std::ios_base;
+
+using std::sort;
+using std::string;
+using std::strncpy;
+
+int N;
+string arrstr[20001];
+
+int CompareAlpa(const string& a, const string& b)
+{
+    if (a.size() == b.size())
+    {
+        for (int i = 0; i < a.size(); i++)
+        {
+            if (a[i] != b[i])
+                return a[i] < b[i]; // 1이면 a가 먼저 출력
+        }
+    }
+}
+
+bool CompareLength(const string& a, const string& b)
+{
+    if (a.size() < b.size()) // a가 더 짧을 경우 먼저 출력
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void sortWord(int N)
+{
+    for (int i = 0; i < N; i++)
+    {
+        cin >> arrstr[i];
+    }
+
+    sort(arrstr, arrstr + N, CompareAlpa);
+    sort(arrstr, arrstr + N, CompareLength);
+
+    bool temp = false;
+
+    for (int i = 0; i < N - 1; i++)
+    {
+        if (arrstr[i].size() == arrstr[i + 1].size())
+        {
+            for (int j = 0; j < arrstr[i].size(); j++)
+            {
+                if (arrstr[i][j] != arrstr[i + 1][j])
+                {
+                    temp = true;
+                    break;
+                }
+            }
+            if (temp == true)
+            {
+                i++;
+                temp == false;
+            }
+        }
+        cout << arrstr[i] << "\n";
+    }
+
+    return;
+}
 
 int main()
 {
@@ -14,70 +79,12 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int N;
-
     cin >> N;
 
-    int cnt[8001] = {0, };
+    cout << "          \n";
+    sortWord(N);
 
-    double Sum = 0;
-    int average = 0, temp = 0, flag = 0, max = -5000, min = 5000, mid = 0, range, count = 0;
-
-    for (int i = 0; i < N; i++)
-    {
-        cin >> temp;
-        Sum += temp;
-
-        cnt[temp + 4000]++;
-
-        if (temp > max)
-            max = temp;
-
-        if (temp < min)
-            min = temp;
-    }
-
-    range = max - min;
-    average = std::round(Sum / N);
-
-
-    flag = 0;
-    max = 0;
-
-    for (int i = 0; i < 8001; i++)
-    {
-        if (cnt[i] > max)
-        {
-            max = cnt[i];
-            flag = i;
-        }
-    }
-
-    for (int i = flag + 1; i < 8001; i++)
-    {
-        if (cnt[i] == max)
-        {
-            flag = i;
-            break;
-        }
-    }
-
-    for (int i = 0; i < 8001; i++)
-    {
-        count += cnt[i];
-
-        if (count >= (N + 1) / 2)
-        {
-            mid = i - 4000;
-            break;
-        }
-    }
-       
-
-    cout << average << "\n";     //산술평균
-    cout << mid << "\n";         //중앙값
-    cout << flag - 4000 << "\n"; //최빈값
-    cout << range << "\n";   //범위
+    sort(arrstr, arrstr + N, CompareLength);
 
     return 0;
 }

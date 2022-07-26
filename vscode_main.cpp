@@ -1,27 +1,73 @@
 #include <iostream>
 #include <algorithm>
+#include <cstring>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
 
-using std::pair;
 using std::sort;
+using std::string;
+using std::strncpy;
 
-pair<int, int> Coordiante[100000];
+int N;
+string arrstr[20000];
 
-void sortCoordinate(int N)
+int CompareAlpa(const string &a, const string &b)
 {
-    for(int i = 0; i < N; i ++)
+    if (a.size() == b.size())
     {
-        cin >> Coordiante[i].first >> Coordiante[i].second;
+        for (int i = 0; i < a.size(); i++)
+        {
+            if (a[i] != b[i])
+                return a[i] < b[i]; // 1이면 a가 먼저 출력
+        }
+    }
+}
+
+bool CompareLength(const string &a, const string &b)
+{
+    if (a.size() < b.size()) // a가 더 짧을 경우 먼저 출력
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void sortWord(int N)
+{
+    for (int i = 0; i < N; i++)
+    {
+        cin >> arrstr[i];
     }
 
-    sort(Coordiante, Coordiante + N);
+    sort(arrstr, arrstr + N, CompareAlpa);
+    sort(arrstr, arrstr + N, CompareLength);
 
-    for(int i = 0; i < N; i ++)
+    bool temp = false;
+
+    for (int i = 0; i < N - 1; i++)
     {
-        cout << Coordiante[i].first << " " << Coordiante[i].second << "\n";
+        if (arrstr[i].size() == arrstr[i + 1].size())
+        {
+            for (int j = 0; j < arrstr[i].size(); j++)
+            {
+                if (arrstr[i][j] != arrstr[i + 1][j])
+                {
+                    temp = true;
+                    break;k
+                }
+            }
+            if (temp == true)
+            {
+                i++;
+                temp == false;
+            }
+        }
+        cout << arrstr[i] << "\n";
     }
 
     return;
@@ -33,11 +79,12 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int N;
-
     cin >> N;
 
-    sortCoordinate(N);
+    cout << "          \n";
+    sortWord(N);
+
+    sort(arrstr, arrstr + N, CompareLength);
 
     return 0;
 }
