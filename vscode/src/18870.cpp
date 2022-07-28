@@ -7,6 +7,7 @@ using std::cout;
 using std::endl;
 using std::ios_base;
 using std::vector;
+using std::lower_bound;
 
 int main()
 {
@@ -35,7 +36,7 @@ int main()
     
     for(int i = 0; i < V.size(); i ++)
     {
-        cout << std::lower_bound(VC.begin(), VC.end(), V[i]) - VC.begin() << " ";
+        cout << lower_bound(VC.begin(), VC.end(), 0) << " ";
     }
     
     return 0;
@@ -49,6 +50,10 @@ int main()
 
 
 /*
+
+시간초과 
+
+
 #include <iostream>
 #include <vector>
 #include <climits>

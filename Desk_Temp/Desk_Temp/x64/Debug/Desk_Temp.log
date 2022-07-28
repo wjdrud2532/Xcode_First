@@ -1,3 +1,2 @@
 ﻿  main.cpp
-C:\Xcode_First\Desk_Temp\Desk_Temp\main.cpp(27,24): warning C4101: 'tempnum' :참조되지 않은 지역 변수입니다.
   Desk_Temp.vcxproj -> C:\Xcode_First\Desk_Temp\x64\Debug\Desk_Temp.exe
