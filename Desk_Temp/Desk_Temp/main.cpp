@@ -1,4 +1,37 @@
 #include <iostream>
+#include <unordered_map>
+
+using namespace std;
+
+int main(void)
+{
+	int N, M, count = 0;
+	pair<string, bool> p;
+	unordered_map <string, bool> m;
+	cin >> N >> M;
+
+	p.second = true;
+	for (int i = 0; i < N; i++)
+	{
+		cin >> p.first;
+		m.insert(p);
+	}
+	
+	for (int i = 0; i < M; i++)
+	{
+		cin >> p.first;
+		if (m[p.first])
+			count++;
+	}
+	
+	cout << count << "\n";
+
+	return 0;
+
+}
+
+/*
+#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <cstring>
@@ -84,3 +117,4 @@ int main()
 
 	return 0;
 }
+*/
