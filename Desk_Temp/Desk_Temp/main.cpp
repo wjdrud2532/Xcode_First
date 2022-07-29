@@ -1,40 +1,8 @@
 #include <iostream>
-#include <unordered_map>
-
-using namespace std;
-
-int main(void)
-{
-	int N, M, count = 0;
-	pair<string, bool> p;
-	unordered_map <string, bool> m;
-	cin >> N >> M;
-
-	p.second = true;
-	for (int i = 0; i < N; i++)
-	{
-		cin >> p.first;
-		m.insert(p);
-	}
-	
-	for (int i = 0; i < M; i++)
-	{
-		cin >> p.first;
-		if (m[p.first])
-			count++;
-	}
-	
-	cout << count << "\n";
-
-	return 0;
-
-}
-
-/*
-#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <cstring>
+#include <map>
 
 using std::cin;
 using std::cout;
@@ -51,70 +19,36 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int N, M, count = 0, tempcnt;
-	string temp;
-	vector <string> arrN, arrM;
+	int N, M, count = 0;
+	pair<string, bool> p;
+	map<string, bool> m;
+	vector<string> v;
 
 	cin >> N >> M;
+
+	p.second = true;
 	for (int i = 0; i < N; i++)
 	{
-		cin >> temp;
-		arrN.push_back(temp);
+		cin >> p.first;
+		m.insert(p);
 	}
 
 	for (int i = 0; i < M; i++)
 	{
-		cin >> temp;
-		arrM.push_back(temp);
-	}
+		cin >> p.first;
 
-	string temp1, temp2;
-	bool isInclude;
-
-	for (int i = 0; i < M; i++)
-	{
-		//비교해야할 단어들
-		isInclude = false;
-		temp1 = arrM[i];
-
-		for (int j = 0; j < N; j++)
+		if (m[p.first])
 		{
-			temp2 = arrN[j];
-
-			if (temp1.length() == temp2.length())
-			{
-				tempcnt = 0;
-
-				for (int k = 0; k < temp2.length(); k++)
-				{
-					if (temp1[tempcnt] == temp2[k])
-					{
-						tempcnt++;
-						if (tempcnt == temp1.length())
-							break;
-					}
-					else
-					{
-						tempcnt = 0;
-					}
-				}
-				if (tempcnt == temp1.length())
-					isInclude = true;
-
-				if (isInclude == true)
-				{
-					count++;
-					break;
-				}
-			}
-
-
+			v.push_back(p.first);
+			count++;
 		}
-		//cout << temp1 << "    " << count << "\n";
 	}
 
 	cout << count << "\n";
+	sort(v.begin(), v.end());
+
+	for (int i = 0; i < v.size(); i++)
+		cout << v[i] << "\n";
 
 	return 0;
 }
-*/
