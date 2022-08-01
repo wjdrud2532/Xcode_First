@@ -1,47 +1,12 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cstring>
-#include <string>
 #include <map>
+#include <algorithm>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
 
 using namespace std;
-
-pair<string, int> p[100000], w[100000];
-
-int BS(string str, int N)
-
-
-{
-	int left = 0, right = N - 1, mid;
-	string temp1 = str, temp2;
-	while (left <= right)
-	{
-		mid = (left + right) / 2;
-		temp2 = p[mid].first;
-
-
-		if (str > temp2)
-		{
-			left = mid + 1;
-		}
-		else if (str < temp2)
-		{
-			right = mid - 1;
-		}
-
-		if (temp2 == str)
-		{
-			return p[mid].second + 1;
-		}
-	}
-
-	return -1;
-}
 
 
 int main()
@@ -50,35 +15,31 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int N, M;
-
+	int N, M, count = 0;
+	map<int, bool> Map;
 
 	cin >> N >> M;
 
+	count = N + M;
 
-	for (int i = 0; i < N; i++)
+	int temp;
+	for (int i = 0; i < N + M; i++)
 	{
-		cin >> p[i].first;
-		p[i].second = i;
-	}
+		cin >> temp;
 
-	copy(p, p + N, w);
-	sort(p, p + N);
-
-	string tempstr;
-	for (int i = 0; i < M; i++)
-	{
-		cin >> tempstr;
-		if ('0' <= tempstr[0] && tempstr[0] <= '9')
+		if (Map.find(temp) != Map.end())
 		{
-			cout << w[stoi(tempstr) - 1].first << "\n";
+			count -= 2;
 		}
 		else
 		{
-			cout << BS(tempstr, N) << "\n";
+			Map.insert(make_pair(temp, true));
 		}
+
 	}
 
+
+	cout << count << "\n";
 
 	return 0;
 }
