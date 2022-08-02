@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
 #include <cstring>
 
@@ -6,85 +7,80 @@ using std::cin;
 using std::cout;
 using std::ios_base;
 
-using std::sort;
-using std::string;
-using std::strncpy;
+using namespace std;
 
-int N;
-string arrstr[20000];
 
-int CompareAlpa(const string &a, const string &b)
-{
-    if (a.size() == b.size())
-    {
-        for (int i = 0; i < a.size(); i++)
-        {
-            if (a[i] != b[i])
-                return a[i] < b[i]; // 1이면 a가 먼저 출력
-        }
-    }
-}
 
-bool CompareLength(const string &a, const string &b)
-{
-    if (a.size() < b.size()) // a가 더 짧을 경우 먼저 출력
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-void sortWord(int N)
-{
-    for (int i = 0; i < N; i++)
-    {
-        cin >> arrstr[i];
-    }
-
-    sort(arrstr, arrstr + N, CompareAlpa);
-    sort(arrstr, arrstr + N, CompareLength);
-
-    bool temp = false;
-
-    for (int i = 0; i < N - 1; i++)
-    {
-        if (arrstr[i].size() == arrstr[i + 1].size())
-        {
-            for (int j = 0; j < arrstr[i].size(); j++)
-            {
-                if (arrstr[i][j] != arrstr[i + 1][j])
-                {
-                    temp = true;
-                    break;k
-                }
-            }
-            if (temp == true)
-            {
-                i++;
-                temp == false;
-            }
-        }
-        cout << arrstr[i] << "\n";
-    }
-
-    return;
-}
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 
-    cin >> N;
+	int N, M, count = 0, tempcnt;
+	string temp;
+	vector <string> arrN, arrM;
 
-    cout << "          \n";
-    sortWord(N);
+	cin >> N >> M;
+	for (int i = 0; i < N; i++)
+	{
+		cin >> temp;
+		arrN.push_back(temp);
+	}
 
-    sort(arrstr, arrstr + N, CompareLength);
+	for (int i = 0; i < M; i++)
+	{
+		cin >> temp;
+		arrM.push_back(temp);
+	}
 
-    return 0;
+	string temp1, temp2;
+	bool isInclude;
+
+	for (int i = 0; i < M; i++)
+	{
+		//비교해야할 단어들
+		isInclude = false;
+		temp1 = arrM[i];
+
+		for (int j = 0; j < N; j++)
+		{
+			temp2 = arrN[j];
+
+			if (temp1.length() == temp2.length())
+			{
+				tempcnt = 0;
+
+				for (int k = 0; k < temp2.length(); k++)
+				{
+					if (temp1[tempcnt] == temp2[k])
+					{
+						tempcnt++;
+						if (tempcnt == temp1.length())
+							break;
+					}
+					else
+					{
+						tempcnt = 0;
+					}
+				}
+				if (tempcnt == temp1.length())
+					isInclude = true;
+
+				if (isInclude == true)
+				{
+					count++;
+					break;
+				}
+			}
+
+
+		}
+		//cout << temp1 << "    " << count << "\n";
+	}
+
+	cout << count << "\n";
+
+	return 0;
 }
