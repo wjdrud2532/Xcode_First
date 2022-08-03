@@ -1,7 +1,5 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
-#include <cstring>
 
 using std::cin;
 using std::cout;
@@ -9,78 +7,33 @@ using std::ios_base;
 
 using namespace std;
 
-
-
-
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int N, M, count = 0, tempcnt;
-	string temp;
-	vector <string> arrN, arrM;
+	int N;
 
-	cin >> N >> M;
-	for (int i = 0; i < N; i++)
+	cin >> N;
+
+	for (int i = 0; i < 6; i++)
 	{
-		cin >> temp;
-		arrN.push_back(temp);
+
 	}
 
-	for (int i = 0; i < M; i++)
-	{
-		cin >> temp;
-		arrM.push_back(temp);
-	}
+	/*
+	시작지점 좌상, 우상, 우하, 좌하 4곳
+	ㄱ, 역 ㄱ
+	ㄴ, 역 ㄴ 4가지 형태
 
-	string temp1, temp2;
-	bool isInclude;
+	육각형이므로 처음 4가지가 주어질 때 넓이 한번 계산하고 
+	그 뒤에 다시 한번 더 계산
 
-	for (int i = 0; i < M; i++)
-	{
-		//비교해야할 단어들
-		isInclude = false;
-		temp1 = arrM[i];
-
-		for (int j = 0; j < N; j++)
-		{
-			temp2 = arrN[j];
-
-			if (temp1.length() == temp2.length())
-			{
-				tempcnt = 0;
-
-				for (int k = 0; k < temp2.length(); k++)
-				{
-					if (temp1[tempcnt] == temp2[k])
-					{
-						tempcnt++;
-						if (tempcnt == temp1.length())
-							break;
-					}
-					else
-					{
-						tempcnt = 0;
-					}
-				}
-				if (tempcnt == temp1.length())
-					isInclude = true;
-
-				if (isInclude == true)
-				{
-					count++;
-					break;
-				}
-			}
-
-
-		}
-		//cout << temp1 << "    " << count << "\n";
-	}
-
-	cout << count << "\n";
+	첫 번쨰 넓이 계산
+		1, 3 번째 순서 중 길이가 작은 값을 사용하고
+		2, 4 번째 순서 중 길이가 긴 것을 사용하여 1차 넓이를 구한다?
+	*/
 
 	return 0;
 }
