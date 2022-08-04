@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <climits>
+#include <list>
+#include <vector>
 
 using std::cin;
 using std::cout;
@@ -14,38 +16,59 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int N, num, temp, Lbig = -1, Lsmall = INT_MAX, Rbig = -1, Rsmall = INT_MAX;
+	list<int> list;
+	
+	vector<int> v;
 
+	int N, num, temp;
+	
 	cin >> N;
 	for (int i = 0; i < 6; i++)
 	{
 		cin >> num >> temp;
-		if (num == 3 || num == 4)
-		{
-			if (Lbig < temp)
-				Lbig = temp;
+		v.push_back(temp);
+	}
 
-			if (Lsmall > temp)
-				Lsmall = temp;
-		}
-		else
+	int mp1 = 0, mp2 = 0, cp = -1;
+	for (int i = 0; i < v.size() - 1; i++)
+	{
+		if (cp < v[i] * v[i + 1])		//가장 큰 변의 두 길이를 찾음
 		{
-			if (Rbig < temp)
-				Rbig = temp;
-
-			if (Rsmall > temp)
-				Rsmall = temp;
+			mp1 = i;
+			mp2 = i + 1;
+			cp = v[i] * v[i + 1];
 		}
 	}
 
-	int all = Lbig * Rbig;
-	int part = Lsmall * Rsmall;
+	if (cp < v[0] * v[5])		//v[0] 과 v[6]의 합도 생각해야함
+	{
+		mp1 = 0;
+		mp2 = 5;
+	}
 
-	cout << all << " " << part << "\n";
+	int all = v[mp1] * v[mp2];
 
-	all = all - part;
+	mp1 += 3;
+	mp2 += 3;
 
-	cout << all * N << "\n";
+	if (mp1 > 5)
+		mp1 = mp1 - 6;
+	if (mp2 > 5)
+		mp2 = mp2 - 6;
+
+	int part = v[mp1] * v[mp2];
+
+	//cout << all << " " << part << "\n";
+
+	cout << (all - part) * N << "\n";
+	
+
+
+
+
+	
+
+	
 	
 
 
