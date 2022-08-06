@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <cmath>
 
 using std::cin;
 using std::cout;
@@ -7,54 +7,49 @@ using std::ios_base;
 
 using namespace std;
 
+int T, n, startx, starty, arrivalx, arrivaly, cnt;
+double tempx, tempy, tempRadius, tempR;
+bool temp1, temp2;
+
+
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	vector<int> v;
+	cin >> T;
 
-	int N, num, temp, all, part;
-	int mp1 = 0, mp2 = 0, cp = -1;
-
-	cin >> N;
-
-	cin >> num >> temp;
-	v.push_back(temp);
-	for (int i = 0; i < 5; i++)
+	while (T--)
 	{
-		cin >> num >> temp;
-		v.push_back(temp);
+		cin >> startx >> starty >> arrivalx >> arrivaly;
+		cin >> n;
 
-		if (cp < v[i] * v[i + 1])		//가장 큰 변의 두 길이를 찾음
+		while (n--)
 		{
-			mp1 = i;
-			mp2 = i + 1;
-			cp = v[i] * v[i + 1];
+			cin >> tempx >> tempy >> tempRadius;
+
+			//주어진 원의 좌표로 시작지점과 도착지점이 그 원의 안, 밖 인지 확인한다
+			//둘의 상태가 다르다면 진입, 이탈을 해야 하므로 cnt ++ 한다
+
+			//주어진 원과 시작지점
+			tempR = sqrt(pow((double)tempx - startx, 2) + pow((double)tempy - starty, 2));	
+
+			//tempR = (tempx - startx) * (tempx - startx) + (tempy - starty) * (tempy - starty);
+			temp1 = tempR >= tempRadius * tempRadius ? false : true;
+
+			tempR = sqrt(pow(tempx - arrivalx, 2) + pow(tempy - arrivaly, 2));
+			
+			//tempR = (tempx - arrivalx) * (tempx - arrivalx) + (tempy - arrivaly) * (tempy - arrivaly);
+			temp2 = tempR >= tempRadius * tempRadius ? false : true;
+
+			if (temp1 != temp2)
+				cnt++;
 		}
+
+		cout << cnt << "\n";
+		cnt = 0;
 	}
 
-	if (cp < v[0] * v[5])		//v[0] 과 v[6]의 합도 생각해야함
-	{
-		mp1 = 0;
-		mp2 = 5;
-	}
-
-	all = v[mp1] * v[mp2];
-
-	mp1 += 3;
-	mp2 += 3;
-
-	if (mp1 > 5)
-		mp1 = mp1 - 6;
-	if (mp2 > 5)
-		mp2 = mp2 - 6;
-
-	part = v[mp1] * v[mp2];
-
-
-	cout << (all - part) * N << "\n";
-	
 	return 0;
 }
