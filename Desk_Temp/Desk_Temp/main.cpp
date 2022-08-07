@@ -7,9 +7,11 @@ using std::ios_base;
 
 using namespace std;
 
-int T, n, startx, starty, arrivalx, arrivaly, cnt;
-double tempx, tempy, tempRadius, tempR;
-bool temp1, temp2;
+int W, H, X, Y, P, cnt = 0;
+int p_x, p_y;
+int leftcir, rectang, rightcir, radius;
+
+bool temp1, temp2, temp3;
 
 
 int main()
@@ -18,38 +20,62 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	cin >> T;
+	cin >> W >> H >> X >> Y >> P;
 
-	while (T--)
+	radius = H / 2;
+
+	while (P--)
 	{
-		cin >> startx >> starty >> arrivalx >> arrivaly;
-		cin >> n;
+		cin >> p_x >> p_y;
 
-		while (n--)
+		//왼쪽 원의 범위
+		leftcir = (p_x - X) * (p_x - X) + (p_y - (Y + radius)) * (p_y - (Y + radius));
+		if (leftcir <= radius * radius && p_x < X)
+			temp1 = true;
+		else
+			temp1 = false;
+
+		//temp1 = leftcir >= radius * radius ? false : true;
+
+		
+
+		//오른쪽 원의 범위
+		rightcir = (p_x - (X + W)) * (p_x - (X + W)) + (p_y - (Y + radius)) * (p_y - (Y + radius));
+		if (rightcir <= radius * radius && p_x > X + W)
+			temp2 = true;
+		else
+			temp2 = false;
+		
+		//temp2 = rightcir >= radius * radius ? false : true;
+
+		
+
+		//직사각형의 범위
+		//rectang = (p_x - (X + W)) * (p_x - (X + W)) + (p_y - (Y + radius)) * (p_y - (Y + radius));;
+		if (X <= p_x && p_x <= X + W && Y <= p_y && p_y <= Y + H)
+			temp3 = true;
+		else temp3 = false;
+
+		//temp3 = rectang >= W * H ? false : true;
+
+
+		if (temp1 == true)
 		{
-			cin >> tempx >> tempy >> tempRadius;
-
-			//주어진 원의 좌표로 시작지점과 도착지점이 그 원의 안, 밖 인지 확인한다
-			//둘의 상태가 다르다면 진입, 이탈을 해야 하므로 cnt ++ 한다
-
-			//주어진 원과 시작지점
-			tempR = sqrt(pow((double)tempx - startx, 2) + pow((double)tempy - starty, 2));	
-
-			//tempR = (tempx - startx) * (tempx - startx) + (tempy - starty) * (tempy - starty);
-			temp1 = tempR >= tempRadius * tempRadius ? false : true;
-
-			tempR = sqrt(pow(tempx - arrivalx, 2) + pow(tempy - arrivaly, 2));
-			
-			//tempR = (tempx - arrivalx) * (tempx - arrivalx) + (tempy - arrivaly) * (tempy - arrivaly);
-			temp2 = tempR >= tempRadius * tempRadius ? false : true;
-
-			if (temp1 != temp2)
-				cnt++;
+			cnt++;
+		}
+		else if (temp2 == true)
+		{
+			cnt++;
+		}
+		else if (temp3 == true)
+		{
+			cnt++;
 		}
 
-		cout << cnt << "\n";
-		cnt = 0;
+		
 	}
+
+	cout << cnt << "\n";
 
 	return 0;
 }
