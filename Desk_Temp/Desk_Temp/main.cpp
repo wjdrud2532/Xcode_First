@@ -1,33 +1,95 @@
 #include <iostream>
-#include <climits>
+#include <algorithm>
+#include <vector>
+#include <cmath>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
+using std::vector;
 
-using namespace std;
-
-int Euclidean(int a, int b)
+int Euclid(int a, int b)
 {
-	int r = a % b;
-	if (r == 0) {
-		return b;
-	}
-	return Euclidean(b, r);
+    int r = a % b;
+    
+    if (r == 0)
+        return b;
+    else
+        return Euclid(b, r);
 }
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-	int n1, n2, max;
+    int N;
+    int arr[100];
+    vector<int> V;
 
-	cin >> n1 >> n2;
-	max = Euclidean(n1, n2);
-	cout << max << "\n";
-	cout << (n1 * n2) / max << "\n";
+    cin >> N;
+    for (int i = 0; i < N; i++)
+        cin >> arr[i];
 
-	return 0;
+    std::sort(arr, arr + N);
+
+    int temp = 0;
+
+    if (N > 2)
+    {
+        temp = Euclid(arr[1] - arr[0], arr[2] - arr[1]);
+        cout << temp << "    <-  temp\n";
+
+
+        for (int i = 1; i < N - 2; i++)
+            temp = Euclid(temp, Euclid(arr[i + 2] - arr[i + 1], arr[i + 1] - arr[i]));    //모든 값들의 최대 공약수
+
+        cout << temp << "    <-  temp\n";
+
+        for (int i = 2; i <= temp; i++)
+        {
+            if (temp % i == 0)
+                V.push_back(i);             //최대 공약수의 약수
+        }
+
+        //최대 공약수의 약수 중에서 나머지가 일치하는 것을 찾는다.
+
+        for (int i = 0; i < V.size(); i++)
+        {
+            for (int j = N - 1; j > 0; j--)
+            {
+                if (arr[j] - arr[j - 1] != V[i] * (arr[j] / V[i] - arr[j - 1] / V[i]))
+                {
+                    V.erase(V.begin() + i);
+                    i--;
+                    break;
+                }
+            }
+        }
+    }
+    else
+    {
+        //2개일 경우 큰값 ㅡ 작은값의 약수
+        int max = arr[N - 1] - arr[0];
+
+        for (int i = 2; i <= max / 2; i++)
+        {
+            if (max % i == 0)
+            {
+                V.push_back(i);
+            }
+        }
+        V.push_back(max);
+    }
+
+
+    for (int i = 0; i < V.size(); i++)
+        cout << V[i] << " ";
+
 }
+
+
+
+
+
