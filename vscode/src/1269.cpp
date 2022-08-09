@@ -91,3 +91,44 @@ int main()
 	*/
 	return 0;
 }
+
+
+
+/*
+이렇게도 할 수 있다 8ms 더 빠름 260걸림
+#include <iostream>
+#include <map>
+
+using std::cin;
+using std::cout;
+using std::ios_base;
+
+using namespace std;
+
+int main(void)
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	map<int, bool> m;
+	int N, M, num;
+
+	cin >> N >> M;
+	for (int i = 0; i < N + M; i++)
+	{
+		cin >> num;
+
+		if (m[num] == true)
+		{
+			m.erase(num);
+		}
+		else
+		{
+			m[num] = true;
+		}
+	}
+	cout << m.size() << "\n";
+}
+
+*/
