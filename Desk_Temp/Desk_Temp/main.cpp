@@ -1,21 +1,18 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
-#include <cmath>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
-using std::vector;
 
-int Euclid(int a, int b)
-{
+int Euclid(int a, int b) {
+
     int r = a % b;
-    
+
     if (r == 0)
         return b;
     else
-        return Euclid(b, r);
+        Euclid(b, r);
 }
 
 int main()
@@ -24,18 +21,18 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int N;
-    int arr[100];
-    vector<int> V;
+    int N, firstRing, temp, euNum;
 
-    cin >> N;
-    for (int i = 0; i < N; i++)
-        cin >> arr[i];
+    cin >> N >> firstRing;
 
-    std::sort(arr, arr + N);
+    for (int i = 0; i < N - 1; i++)
+    {
+        cin >> temp;
+        euNum = Euclid(firstRing, temp);
 
-
-    
+        //cout << "최대 공약수는 > " << euNum << "\n";
+        cout << firstRing / euNum << "/" << temp / euNum << "\n";
+    }
     return 0;
 }
 
