@@ -1,42 +1,50 @@
 #include <iostream>
 #include <algorithm>
 
+#include <map>
+
 using std::cin;
 using std::cout;
 using std::ios_base;
 
-int Euclid(int a, int b) {
+using namespace std;
 
-    int r = a % b;
+int n, m;
+pair<int, bool> p[9];
 
-    if (r == 0)
-        return b;
-    else
-        Euclid(b, r);
+void dfs(int cnt)
+{
+	if (m == cnt)
+	{
+		for (int i = 0; i < m; i++)
+			cout << p[i].first << " ";
+		cout << "\n";
+	}
+
+	for (int i = 1; i <= n; i++)
+	{
+		if(p[i].second == false)
+		{
+			p[i].second = true;
+			p[cnt].first = i;
+			dfs(cnt + 1);
+			p[i].second = false;
+		}
+	}
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 
-    int N, firstRing, temp, euNum;
+	
 
-    cin >> N >> firstRing;
+	cin >> n >> m;
 
-    for (int i = 0; i < N - 1; i++)
-    {
-        cin >> temp;
-        euNum = Euclid(firstRing, temp);
+	dfs(0);
 
-        //cout << "최대 공약수는 > " << euNum << "\n";
-        cout << firstRing / euNum << "/" << temp / euNum << "\n";
-    }
-    return 0;
+	return 0;
 }
-
-
-
-
 
