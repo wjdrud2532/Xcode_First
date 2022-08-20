@@ -1,45 +1,50 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
-#include <cmath>
+
+#include <map>
 
 using std::cin;
 using std::cout;
 using std::ios_base;
-using std::vector;
 
-int Euclid(int a, int b)
+using namespace std;
+
+int n, m;
+pair<int, bool> p[9];
+
+void dfs(int cnt)
 {
-    int r = a % b;
-    
-    if (r == 0)
-        return b;
-    else
-        return Euclid(b, r);
+	if (m == cnt)
+	{
+		for (int i = 0; i < m; i++)
+			cout << p[i].first << " ";
+		cout << "\n";
+	}
+
+	for (int i = 1; i <= n; i++)
+	{
+		if(p[i].second == false)
+		{
+			p[i].second = true;
+			p[cnt].first = i;
+			dfs(cnt + 1);
+			p[i].second = false;
+		}
+	}
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 
-    int N;
-    int arr[100];
-    vector<int> V;
+	
 
-    cin >> N;
-    for (int i = 0; i < N; i++)
-        cin >> arr[i];
+	cin >> n >> m;
 
-    std::sort(arr, arr + N);
+	dfs(0);
 
-
-    
-    return 0;
+	return 0;
 }
-
-
-
-
 
