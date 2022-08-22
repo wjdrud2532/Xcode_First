@@ -1,46 +1,78 @@
 #include<iostream>
 using namespace std;
 
-int fibcnt = 0;
-int fibonaccicnt = 0;
+int wa[20] = { 0, };
+int wb[20] = { 0, };
+int wc[20] = { 0, };
 
-int fib(int n)
+int w[21][21][21];
+
+int answ(int a, int b, int c)
 {
-	
-	if (n == 1 || n == 2)
+	if (a <= 0 || b <= 0 || c <= 0)
 		return 1;
+	else if (a > 20 || b > 20 || c > 20)
+		return w[20][20][20];
 	else
-	{
-		fibcnt++;
-		return (fib(n - 1) + fib(n - 2));
-	}
+		return w[a][b][c];
 }
 
-int fibonacci(int n)
-{
-	int f[41] = { 0, };
-
-	f[1] = f[2] = 1;
-
-	for (int i = 3; i <= n; i++)
-	{
-		f[i] = f[i - 1] + f[i - 2];
-		
-		fibonaccicnt++;
-	}
-
-	return f[n];
-}
 
 int main()
 {
-	int n;
-	cin >> n;
+	int a, b, c;
 
-	fib(n);
-	fibonacci(n);
+	wa[0] = wb[0] = wc[0] = 1;
 
-	cout << ++fibcnt << " " << fibonaccicnt << "\n";
+
+
+
+	for (int i = 0; i <= 20; i++)
+	{
+		for (int j = 0; j <= 20; j++)
+		{
+			for (int k = 0; k <= 20; k++)
+			{
+				if (i <= 0 || j <= 0 || k <= 0)
+					w[i][j][k] = 1;
+				else
+					w[i][j][k] = (w[i - 1][j][k] + w[i - 1][j - 1][k] + w[i - 1][j][k - 1]) - w[i - 1][j - 1][k - 1];
+				//cout << "i = " << i << ", j = " << j << ", k = " << k << "     ";
+				//cout << " " << w[i][j][k] << " = (" << w[i - 1][j][k] << " + " << w[i - 1][j - 1][k] << " + " << w[i - 1][j][k - 1] << ") - " << w[i - 1][j - 1][k - 1] << "\n";
+
+			}
+		}
+
+	}
+
+
+	/*
+	2 2 2 라면
+	w(1, 2, 2) + w(1, 1, 2) + w(1, 2, 1) - w(1, 1, 1) 이므로
+	1			+ 1			+		1		- 1
+	3 - 1 = 2가 된다.
+
+	10 4 6 이라면
+
+	(9 4 6) + (9 3 6) + (9 4 5) - (9 3 5)
+
+	*/
+	while (1)
+	{
+		cin >> a >> b >> c;
+
+		if (a == -1 && b == -1 && c == -1)
+			break;
+		else
+			cout << "w(" << a << ", " << b << ", " << c << ") = " << answ(a, b, c) << "\n";
+
+	}
+
+
+
+
+
+
 
 	return 0;
 }
