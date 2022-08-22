@@ -1,49 +1,46 @@
-#include <iostream>
-#include <algorithm>
-
-#include <map>
-
-using std::cin;
-using std::cout;
-using std::ios_base;
-
+#include<iostream>
 using namespace std;
 
-int n, m;
-pair<int, bool> p[9];
+int fibcnt = 0;
+int fibonaccicnt = 0;
 
-void dfs(int cnt)
+int fib(int n)
 {
-	if (m == cnt)
+	
+	if (n == 1 || n == 2)
+		return 1;
+	else
 	{
-		for (int i = 0; i < m; i++)
-			cout << p[i].first << " ";
-		cout << "\n";
+		fibcnt++;
+		return (fib(n - 1) + fib(n - 2));
+	}
+}
+
+int fibonacci(int n)
+{
+	int f[41] = { 0, };
+
+	f[1] = f[2] = 1;
+
+	for (int i = 3; i <= n; i++)
+	{
+		f[i] = f[i - 1] + f[i - 2];
+		
+		fibonaccicnt++;
 	}
 
-	for (int i = 1; i <= n; i++)
-	{
-		if(p[i].second == false)
-		{
-			p[i].second = true;
-			p[cnt].first = i;
-			dfs(cnt + 1);
-			p[i].second = false;
-		}
-	}
+	return f[n];
 }
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+	int n;
+	cin >> n;
 
-	
+	fib(n);
+	fibonacci(n);
 
-	cin >> n >> m;
-
-	dfs(0);
+	cout << ++fibcnt << " " << fibonaccicnt << "\n";
 
 	return 0;
 }
