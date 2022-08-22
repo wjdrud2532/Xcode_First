@@ -16,6 +16,11 @@ int answ(int a, int b, int c)
 
 int main()
 {
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+	ios_base::sync_with_stdio(false);
+    //이거 넣으면 8, 안넣으면 400 넘어감
+
 	int a, b, c;
 
 	for (int i = 0; i <= 20; i++)
