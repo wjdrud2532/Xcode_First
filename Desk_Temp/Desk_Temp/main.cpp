@@ -1,29 +1,37 @@
 #include<iostream>
+#include <cmath>
+
 using namespace std;
 
 
-int arr[1000000];
+int arr[1000000] = { 0, };
+int maxvalue = -2001;
 
 int main()
 {
-	cin.tie(nullptr);
-	cout.tie(nullptr);
-	ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    ios_base::sync_with_stdio(false);
 
-	arr[0] = 1;
-	arr[1] = 2;
+    int n;
+    cin >> n;
 
+    cin >> arr[0];
+    int maxvalue = arr[0];
+    int temp;
+    for (int i = 1; i < n; i++)
+    {
+        cin >> temp;
 
-	int n;
-	cin >> n;
+        arr[i] = max(arr[i - 1] + temp, temp);
 
-	for (int i = 2; i < n; i++)
-	{
-		arr[i] = (arr[i - 1] + arr[i - 2]) % 15746;
-	}
+        if (arr[i] > maxvalue)
+            maxvalue = arr[i];
 
-	cout << arr[n - 1] << "\n";
+    }
 
-	return 0;
+    cout << maxvalue << "\n";
+
+    return 0;
 }
 
