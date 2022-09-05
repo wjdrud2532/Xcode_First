@@ -1,42 +1,50 @@
 #include <iostream>
-#include <algorithm>
 #include <cmath>
 
-using std::cin;
-using std::cout;
+#define MMAX(a, b, c) max(max(a, b), c)
+using namespace std;
 
-int main() 
+int main()
 {
-	int n, divide;
+	int n, result = -1;
+	int arr[10001] = { 0, };
+	int dp[10001] = { 0, };
+
 	cin >> n;
-
-	long long dp[101][10] = { 0, };
-	long long sum = 0;
-	divide = 1000000000;
-
-	for (int i = 0; i < 10; i++)
-		dp[1][i] = 1;
-
-	for (int i = 2; i <= n; i++)
+	if (n == 1)
 	{
-		for (int j = 0; j <= 9; j++)
-		{ 
-			if (j == 0)	//0인 경우 뒤에 1만 올 수 있다
-				dp[i][j] = dp[i - 1][j + 1] % divide;
-
-			else if (j == 9)//9인 경우 뒤에 8만 올 수 있다
-				dp[i][j] = dp[i - 1][j - 1] % divide;
-
-			else//	나머지의 경우 +-1 의 경우를 모두 더한다
-				dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j + 1] % divide;
-		}
+		cin >> result;
+		cout << result << "\n";
 	}
+	else if (n == 2)
+	{
+		cin >> result;
+		cin >> n;
+		result += n;
+		cout << result << "\n";
+	}
+	else
+	{
+		for (int i = 1; i <= 3; i++)
+		{
+			cin >> arr[i];
+		}
 
-	for (int i = 1; i <= 9; i++)
-		sum += dp[n][i] % divide;
+		dp[1] = arr[1];
+		dp[2] = dp[1] + arr[2];
+		dp[3] = MMAX(arr[1] + arr[3], arr[2] + arr[3], dp[2]);
+		result = dp[3];
 
-	cout << sum % divide << "\n";
+		for (int i = 4; i <= n; i++)
+		{
+			cin >> arr[i];
+			dp[i] = MMAX(dp[i - 2] + arr[i], dp[i - 3] + arr[i - 1] + arr[i], dp[i - 1]);
 
+			//cout << dp[i] << " ";
+
+			
+		}
+		cout << dp[n] << "\n";
+	}
 	return 0;
-
 }
