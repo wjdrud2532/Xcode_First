@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 
+//Clion commit test in window
+
 #define INF 10000001
 //100,000*100 = 10,000,000 으로 이 값 이상으로 INF를 설정해야 한다
 
