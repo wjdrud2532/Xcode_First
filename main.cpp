@@ -16,7 +16,7 @@ void dfs(int count)
     {
         for(int i = 0; i < M; i ++)
         {
-            cout <<
+
         }
     }
 
