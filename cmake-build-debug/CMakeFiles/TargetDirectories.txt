@@ -1,3 +1,3 @@
-/Users/hanjeong-gyeong/CLionProjects/SecondClion/cmake-build-debug/CMakeFiles/SecondClion.dir
-/Users/hanjeong-gyeong/CLionProjects/SecondClion/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/hanjeong-gyeong/CLionProjects/SecondClion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Xcode_First/cmake-build-debug/CMakeFiles/SecondClion.dir
+C:/Xcode_First/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Xcode_First/cmake-build-debug/CMakeFiles/rebuild_cache.dir
