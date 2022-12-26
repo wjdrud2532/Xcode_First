@@ -80,7 +80,15 @@ int main()
             }
         }
     }
-
+/*
+ * string s;
+ * switch(s)
+ *  case:"abc"
+ * {
+ *
+ * }
+ *
+ */
 }
 
 
