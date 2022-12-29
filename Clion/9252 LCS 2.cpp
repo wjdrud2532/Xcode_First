@@ -1,6 +1,87 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+
+using namespace std;
+
+string s1, s2;
+
+int dp[1001][1001] = {0,};
+
+void printLCS(int i, int j)
+{
+    if (dp[i][j] == 0)
+        return;
+
+    if (s1[i - 1] == s2[j - 1])
+    {
+        printLCS(i - 1, j - 1);
+        cout << s1[i - 1];
+    }
+    else
+    {
+        if (dp[i - 1][j] > dp[i][j - 1])
+            printLCS(i - 1, j);
+        else
+            printLCS(i, j - 1);
+    }
+
+    return;
+}
+
+void findLCS(string s1, string s2)
+{
+    for (int i = 1; i <= s1.length(); i++)
+    {
+        for (int j = 1; j <= s2.length(); j++)
+        {
+            if (s1[i - 1] == s2[j - 1])
+            {
+                if (dp[i][j] == 0)
+                {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                }
+            }
+
+                //LCS 1과 다르게 else 하지 않으면 문장 출력에 오류 발생
+                //길이는 똑같이 출력할 수 있지만 문장을 역추적 할 때 잘못된 방향으로 돌아갈 수 있음
+            else
+            {
+                //아래 두 코드 같음
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+                //dp[i][j] = max({dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]});
+            }
+        }
+    }
+
+    return;
+}
+
+int main()
+{
+    cin >> s1 >> s2;
+
+    //최장거리 구함
+    findLCS(s1, s2);
+
+    cout << dp[s1.length()][s2.length()] << "\n";
+
+    if (dp[s1.length()][s2.length()] != 0)
+    {
+        //최장 거리 길이를 역추적하여 재귀로 LCS 문자열을 출력
+        printLCS(s1.length(), s2.length());
+    }
+
+    return 0;
+}
+
+
+
+//아래 전부 시간초과
+/*
+#include <iostream>
+#include <algorithm>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -76,3 +157,4 @@ int main()
 
     return 0;
 }
+*/
