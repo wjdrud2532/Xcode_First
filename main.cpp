@@ -1,8 +1,33 @@
 #include <iostream>
-#include <cstring>
-#include <stack>
+#include <algorithm>
 
 using namespace std;
+
+int N, MaxLength = 0;
+int arr[1001];
+int dp[1001];
+
+void PrintNum(int StartPoint, int PrintPoint)
+{
+    if(PrintPoint == 0)
+        return ;
+
+    int tempnum = 0;
+    for(int i = StartPoint; i >= 0; i --)
+    {
+        if(dp[i] == PrintPoint)
+        {
+            //cout << "maxlength = " << PrintPoint << "   i = " << i << " arr = " << arr[i] << " \n";
+            PrintNum(i - 1, PrintPoint - 1);
+            tempnum = arr[i];
+            break;
+        }
+    }
+
+    cout << tempnum << " ";
+
+    return ;
+}
 
 int main()
 {
@@ -10,68 +35,27 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    string s, boom;
+    cin >> N;
 
-    stack<char> stack;
-
-    cin >> s >> boom;
-
-
-    for(int i = 0; i < s.length(); i ++)
+    for (int i = 0; i < N; i++)
     {
-        /*
-         * 문자열을 순서대로 폭탄문자열과 비교한다
-         * 같다면 폭탄문자열의 끝까지 비교하고
-         * 비교 하다가 중간에 달라진다면 지금까지 모았던 값을 전부 스택에 추가한다(임시 변수 생성 필요)
-         */
-
-        if (s[i] == boom[0])
-        {
-            string tempS;
-            tempS = boom[0];
-
-            bool IsBoom = true;
-            for(int j = 1; j < boom.size(); j ++)
-            {
-
-                if(s[i + j] == boom[j])
-                {
-                    tempS += boom[j];
-                }
-                else
-                {
-                    i += j;
-                    IsBoom = false;
-                    break;
-                }
-            }
-
-            if(IsBoom)
-                tempS = "";
-
-            for(int j = 0; j < tempS.size(); j ++)
-            {
-                stack.push(tempS[j]);
-            }
-
-            //뒤쪽으로 폭탄 있는지 확인
-            if(stack.top() == boom[boom.size() - 1])
-            {
-
-            }
-        }
-        else
-        {
-            stack.push(s[i]);
-        }
-
-
+        cin >> arr[i];
+        dp[i] = 1;
     }
 
-    //마지막으로 폭탄 있는지 다시 확인
-    //역으로 탐색
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = i; j >= 0; j--)
+        {
+            if (arr[i] > arr[j] && dp[j] >= dp[i] - 1)
+                dp[i] = dp[j] + 1;
+        }
+        if (dp[i] > MaxLength)
+            MaxLength = dp[i];
+    }
 
+    cout << MaxLength << "\n";
 
-
+    PrintNum(N - 1, MaxLength);
 
 }
