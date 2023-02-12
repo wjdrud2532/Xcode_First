@@ -36,28 +36,28 @@ int DivideAndPlus()
             if (j - 1 >= 0 && arr[i][j - 1] != -1)
             {
                 temparr[i][j - 1] += tempnum;
-                tempcnt++;
+                tempcnt ++;
             }
 
             //오른쪽
             if (j + 1 < C)
             {
                 temparr[i][j + 1] += tempnum;
-                tempcnt++;
+                tempcnt ++;
             }
 
             //위
             if (i - 1 >= 0)
             {
                 temparr[i - 1][j] += tempnum;
-                tempcnt++;
+                tempcnt ++;
             }
 
             //아래
             if (i + 1 < R)
             {
                 temparr[i + 1][j] += tempnum;
-                tempcnt++;
+                tempcnt ++;
             }
 
             //가운데
@@ -153,9 +153,9 @@ int main()
     }
 
     int result = 0;
-    for (int i = 0; i < R; i++)
+    for (int i = 0; i < R; i ++)
     {
-        for (int j = 0; j < C; j++)
+        for (int j = 0; j < C; j ++)
         {
             result += arr[i][j];
         }
