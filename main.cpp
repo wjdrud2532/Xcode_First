@@ -1,61 +1,68 @@
 #include <iostream>
 #include <algorithm>
+#include <type_traits>
 
 using namespace std;
 
-int N, MaxLength = 0;
-int arr[1001];
-int dp[1001];
+int N, result = 0;
+long int arr[2001];
 
-void PrintNum(int StartPoint, int PrintPoint)
+bool TwoPointer(long int num, int current)
 {
-    if(PrintPoint == 0)
-        return ;
+    int start = 0, end = N - 1, sum = 0, cnt = 0;
 
-    int tempnum = 0;
-    for(int i = StartPoint; i >= 0; i --)
+    if(start == current)
+        start ++;
+
+    if(end == current)
+        end --;
+
+    while(start < end)
     {
-        if(dp[i] == PrintPoint)
-        {
-            //cout << "maxlength = " << PrintPoint << "   i = " << i << " arr = " << arr[i] << " \n";
-            PrintNum(i - 1, PrintPoint - 1);
-            tempnum = arr[i];
-            break;
-        }
+        sum = arr[start] + arr[end];
+
+        if(sum == num)
+            return true;
+
+        else if(sum < num)
+            start ++;
+
+        else
+            end --;
+
+        if(start == current)
+            start ++;
+
+        if(end == current)
+            end --;
+
     }
 
-    cout << tempnum << " ";
-
-    return ;
+    return false;
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(0);
+    ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
 
     cin >> N;
-
-    for (int i = 0; i < N; i++)
-    {
+    for(int i = 0; i < N; i ++)
         cin >> arr[i];
-        dp[i] = 1;
-    }
 
-    for (int i = 0; i < N; i++)
+    sort(arr, arr + N);
+
+    for(int i = 0; i < N; i ++)
     {
-        for (int j = i; j >= 0; j--)
-        {
-            if (arr[i] > arr[j] && dp[j] >= dp[i] - 1)
-                dp[i] = dp[j] + 1;
-        }
-        if (dp[i] > MaxLength)
-            MaxLength = dp[i];
+        if(TwoPointer(arr[i], i))
+            result ++;
     }
 
-    cout << MaxLength << "\n";
+    cout << result << "\n";
 
-    PrintNum(N - 1, MaxLength);
-
+    return 0;
 }
+
+
+
