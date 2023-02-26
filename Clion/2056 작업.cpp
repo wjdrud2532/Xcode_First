@@ -65,3 +65,83 @@ int main()
 
     return 0;
 }
+
+/*  위상정렬 사용
+ * #include <iostream>
+#include <algorithm>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+int N, M;
+vector<int> v[10001];
+int indegree[10001] = {0,};
+int manytime[10001];
+int dp[10001];
+int result = 0;
+
+queue<int> q;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    cin >> N;
+
+    int time, B, tempnum;
+    for (int i = 1; i <= N; i ++)
+    {
+        cin >> time >> B;
+
+        if(B)
+        {
+            for(int j = 0; j < B; j ++)
+            {
+                cin >> tempnum;
+                v[tempnum].push_back(i);
+            }
+        }
+
+        manytime[i] = dp[i] = time;
+        indegree[i] = B;
+    }
+
+    for (int i = 1; i <= N; i ++)
+    {
+        if (indegree[i] == 0)
+            q.push(i);
+    }
+
+
+    while (! q.empty())
+    {
+        int current = q.front();
+        q.pop();
+
+        for (int i = 0; i < v[current].size(); i ++)
+        {
+            int next = v[current][i];
+            indegree[next] --;
+
+            dp[next] = max(dp[next], dp[current] + manytime[next]);
+
+            if (indegree[next] == 0)
+            {
+                q.push(next);
+            }
+        }
+    }
+
+    for(int i = 1; i <= N; i ++)
+    {
+        result = max(result, dp[i]);
+    }
+
+    cout << result << "\n";
+
+    return 0;
+}
+ */
