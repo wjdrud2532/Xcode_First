@@ -1,71 +1,93 @@
-#include<iostream>
-#include<math.h>
+#include <iostream>
+#include <vector>
+#include <queue>
 
 using namespace std;
 
-int arr[21][21];
-bool isvisit[21];
-int N, minnum = 201, temp, start, link;
+int N, M;
+vector<pair<int, int>> v[1001];
+int indegree[1001] = {0, };
+int dp[1001];
 
+// 1을 가장 마지막에 저장
+// 가장 큰 값을 어디서 가져왔는지 기록
 
-void dfs(int cnt, int m) // x는 카운트 수, pos는 다음 값
-{
-    if (cnt == N / 2) // 서로 같은 개수로 비교 가능한 경우
-    {
-        start = link = 0;
-        
-        for (int i = 1; i <= N; i++)
-        {
-            for (int j = 1; j <= N; j++)
-            {
-                if(i != j)      //0 값은 생략
-                {
-                    // 둘 중 한가지 경우만 발생하므로 else if
-                    
-                    //둘 다 방문했다면 기존값에 더한다
-                    //sij 부터 sji 까지 반복하므로 arr[i][j] + arr[j][i]는 하지 않는다
-                    //절반으로 나ㅝ서 arr[i][j] + arr[j][i]를 할 경우 1,2 가 안된다
-                    if (isvisit[i] == true && isvisit[j] == true)
-                        start += arr[i][j];
+// resultList[1] 은 이전에 가장 큰 값 4를 가리킴
+// resultList[4] 는 7 ... 이런식으로 저장
+int resultList[1001] = {0, };
 
-                    else if (isvisit[i] == false && isvisit[j] == false)
-                        link += arr[i][j];
-                }
-                
-            }
-        }
-        
-        temp = abs(start - link);
-        
-        if (minnum > temp)
-            minnum = temp;
-        
-        return;
-    }
-    
-    for (int i = m; i < N; i++) // dfs   cnt가 n/2가 될 때 까지 반복
-    {                           // n/2 가 되어야만 start와 link를 맞아 떨어지게 비교 가능
-        isvisit[i] = true;
-        dfs(cnt + 1, i + 1);
-        isvisit[i] = false;
-    }
-    
-}
+//32
+//1 2 5 6 8 7 4 1
 
 int main()
 {
-    cin >> N;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     
-    for (int i = 1; i <= N; i++)
+    cin >> N >> M;
+    int start, end, value;
+    for(int i = 0; i < M; i ++)
     {
-        for (int j = 1; j <= N; j++)
-        {
-            cin >> arr[i][j];
-        }
+        cin >> start >> end >> value;
+        
+        indegree[end] ++;   // 이곳에 도달할 수 있는 방법의 수
+        
+        // 출발지            도착지  점수
+        v[start].push_back({end, value});
     }
     
-    dfs(0, 1); // 카운트 0회부터 숫자는 1부터 시작
+    queue<int> q;
+//    for(int i = 0; i < v[1].size(); i ++)
+//    //for(int i = 1; i <= N; i ++)
+//    {
+//        q.push(v[1][i]);
+//        dp[q.front().first][0] = q.front().second;
+//    }
     
-    cout << minnum << "\n";
+    // 1에서 출발하는 것들 중
+    for(int i = 0; i < v[1].size(); i ++)
+    {
+        // 차수가 1인 것들을 push
+        if(indegree[v[1][i].first])
+            q.push(v[1][i].first);
+    }
+    
+    // 예제대로 가면 지금 2, 3 이 queue에 들어가 있음
+    while(!q.empty())
+    {
+        int current = q.front();
+        q.pop();
+        
+        for(int i = 0; i < v[current].size(); i ++)
+        {
+            int next = v[current][i].first;
+            indegree[next] --;
+            
+            // 현재 next 에서 갖고 있는 값과 새로운 값을 비교하여
+            // 더 큰 값을 next에 저장
+            // 어디에서 가져왔는지를 list에 저장해야함
+            
+            //dp 해야함
+            //이 곳과 연결될 수 있는 모든 값들 중에서 가장 큰 값을 찾는다.
+            //next에 해당되는 vector에 값을 push?
+            
+            //-> --하는 것은 연결되어 있는 무언가를 처리한 것이므로
+            // --할 때 마다 현재 갖고 있는 값보다 크다면 그것이
+            // 현재 노드에서 가질 수 있는 가장 큰 값이 된다.
+            
+            if(indegree[next] == 0)
+            {
+                q.push(next);
+                
+                
+            }
+        }
+    }
+    /*
+     해당 좌표가 가질 수 있는 최대값,
+     이 것과 연결될 수 있는 것들 중 가장 큰 것을 선택
+     */
+    
+    
 }
-
