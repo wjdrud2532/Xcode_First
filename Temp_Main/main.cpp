@@ -1,93 +1,87 @@
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <algorithm>
 
 using namespace std;
 
-int N, M;
-vector<pair<int, int>> v[1001];
-int indegree[1001] = {0, };
-int dp[1001];
+int N;
+string str = "";
+bool isEnd = false;
 
-// 1을 가장 마지막에 저장
-// 가장 큰 값을 어디서 가져왔는지 기록
+bool checkarr(string tempstr)
+{
+    // 가장 끝에서부터 비교 가능한 곳 까지 비교
+    string str1;
+    string str2;
+    
+    // tempstr = 123456789
+    for(int i = tempstr.size() - 1, cnt = 1; i >= 0; i --, cnt ++)
+    {
+        if(i * 2 < tempstr.size())
+            break;
+        
+        str1 = tempstr.substr(i, cnt);
+        str2 = tempstr.substr(i - cnt, cnt);
+        
+        if(str1 == str2)
+        {
+            return false;
+        }
+    }
+    
+//    cout << str1 << "\n" << str2 << "\n\n";
+    return true;
+}
 
-// resultList[1] 은 이전에 가장 큰 값 4를 가리킴
-// resultList[4] 는 7 ... 이런식으로 저장
-int resultList[1001] = {0, };
-
-//32
-//1 2 5 6 8 7 4 1
+void dfs(string tempstr)
+{
+    if(checkarr(tempstr) && tempstr.size() == N)
+    {
+        cout << tempstr << "\n";
+        isEnd = true;
+        return ;
+    }
+    
+    // 좋은 수열이 아니라면 가장 뒤의 것을 pop
+    if(checkarr(tempstr) == false)
+    {
+        tempstr.pop_back();
+        return;
+    }
+    
+    for(int i = 1; i <= 3; i ++)
+    {
+        // 수열 길이를 늘려야 할 경우
+        if(tempstr.size() < N && !isEnd)
+        {
+            dfs(tempstr + to_string(i));
+        }
+        
+    }
+}
 
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
+    cin >> N;
+
+    dfs("1");
+
+//    cout << "last   : ";
+//    cout << str << "\n";
     
-    cin >> N >> M;
-    int start, end, value;
-    for(int i = 0; i < M; i ++)
-    {
-        cin >> start >> end >> value;
-        
-        indegree[end] ++;   // 이곳에 도달할 수 있는 방법의 수
-        
-        // 출발지            도착지  점수
-        v[start].push_back({end, value});
-    }
-    
-    queue<int> q;
-//    for(int i = 0; i < v[1].size(); i ++)
-//    //for(int i = 1; i <= N; i ++)
-//    {
-//        q.push(v[1][i]);
-//        dp[q.front().first][0] = q.front().second;
-//    }
-    
-    // 1에서 출발하는 것들 중
-    for(int i = 0; i < v[1].size(); i ++)
-    {
-        // 차수가 1인 것들을 push
-        if(indegree[v[1][i].first])
-            q.push(v[1][i].first);
-    }
-    
-    // 예제대로 가면 지금 2, 3 이 queue에 들어가 있음
-    while(!q.empty())
-    {
-        int current = q.front();
-        q.pop();
-        
-        for(int i = 0; i < v[current].size(); i ++)
-        {
-            int next = v[current][i].first;
-            indegree[next] --;
-            
-            // 현재 next 에서 갖고 있는 값과 새로운 값을 비교하여
-            // 더 큰 값을 next에 저장
-            // 어디에서 가져왔는지를 list에 저장해야함
-            
-            //dp 해야함
-            //이 곳과 연결될 수 있는 모든 값들 중에서 가장 큰 값을 찾는다.
-            //next에 해당되는 vector에 값을 push?
-            
-            //-> --하는 것은 연결되어 있는 무언가를 처리한 것이므로
-            // --할 때 마다 현재 갖고 있는 값보다 크다면 그것이
-            // 현재 노드에서 가질 수 있는 가장 큰 값이 된다.
-            
-            if(indegree[next] == 0)
-            {
-                q.push(next);
-                
-                
-            }
-        }
-    }
     /*
-     해당 좌표가 가질 수 있는 최대값,
-     이 것과 연결될 수 있는 것들 중 가장 큰 것을 선택
+     수열을 생성
+     좋은 수열인지 확인
+     좋은 수열이면 str추가
+     좋은 수열이 아니라면 이전 dfs로 돌아가 다른 수 다 넣어보고 좋은 수열인지 확인
+        여기서도 좋은 수열이 아니라면 이전 값을 뺀다
      */
     
-    
+    return 0;
 }
+
+//1213123132123121312313212
+//1213123132123121312313212
+
+//121312313212312131231321312132123121312313212312131
+//121312313212312131231321312132123121312313212312131

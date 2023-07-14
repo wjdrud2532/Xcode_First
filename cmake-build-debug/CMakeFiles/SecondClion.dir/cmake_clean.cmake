@@ -1,12 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SecondClion.dir/clionTemp.cpp.obj"
-  "CMakeFiles/SecondClion.dir/clionTemp.cpp.obj.d"
-  "CMakeFiles/SecondClion.dir/main.cpp.obj"
-  "CMakeFiles/SecondClion.dir/main.cpp.obj.d"
-  "SecondClion.exe"
-  "SecondClion.exe.manifest"
+  "CMakeFiles/SecondClion.dir/ClionMain.cpp.o"
+  "CMakeFiles/SecondClion.dir/ClionMain.cpp.o.d"
+  "CMakeFiles/SecondClion.dir/clionTemp.cpp.o"
+  "CMakeFiles/SecondClion.dir/clionTemp.cpp.o.d"
+  "SecondClion"
   "SecondClion.pdb"
-  "libSecondClion.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
