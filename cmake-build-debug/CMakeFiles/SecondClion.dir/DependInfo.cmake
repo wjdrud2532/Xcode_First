@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/han/GitHub/Xcode_First/ClionMain.cpp" "CMakeFiles/SecondClion.dir/ClionMain.cpp.o" "gcc" "CMakeFiles/SecondClion.dir/ClionMain.cpp.o.d"
-  "/Users/han/GitHub/Xcode_First/clionTemp.cpp" "CMakeFiles/SecondClion.dir/clionTemp.cpp.o" "gcc" "CMakeFiles/SecondClion.dir/clionTemp.cpp.o.d"
+  "C:/Xcode_First/ClionMain.cpp" "CMakeFiles/SecondClion.dir/ClionMain.cpp.obj" "gcc" "CMakeFiles/SecondClion.dir/ClionMain.cpp.obj.d"
+  "C:/Xcode_First/clionTemp.cpp" "CMakeFiles/SecondClion.dir/clionTemp.cpp.obj" "gcc" "CMakeFiles/SecondClion.dir/clionTemp.cpp.obj.d"
   )
 
 # Targets to which this target links.

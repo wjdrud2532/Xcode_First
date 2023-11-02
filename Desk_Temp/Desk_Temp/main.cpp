@@ -1,57 +1,111 @@
+// 1707 이분 그래프
+
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include <queue>
 
 using namespace std;
 
+int K;
+
+int V, E;
+
+vector<int> v[20001];
+bool isVisit[20001] = { 0, };
+
+int group[20001] = { 0, };
+
+bool isBinary(int startPoint)
+{
+	queue<int> q;
+
+	q.push(startPoint);
+	isVisit[startPoint];
+	group[startPoint] = 1;
+
+	while (!q.empty())
+	{
+		int currentPoint = q.front();
+		q.pop();
+
+		int nextGroup;
+
+		(group[currentPoint] == 1) ? nextGroup = 2 : nextGroup = 1;
+
+		for (int i = 0; i < v[currentPoint].size(); i++)
+		{
+			int nextPoint = v[currentPoint][i];
+
+			// 방문한 경우 건너뜀	
+			if (isVisit[nextPoint] == true)
+				continue;
+
+			q.push(nextPoint);
+			isVisit[nextPoint] = true;
+			group[nextPoint] = nextGroup;		// 다른 그룹으로 설정
+		}
+
+	}
+
+	return true;
+}
+
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	cout.tie(nullptr);
+	cin >> K;
 
-
-	int n, maxLength = 0, temp = 0;
-	int arr[1001];
-	int dp[1001];
-	int dp2[1001];
-
-	cin >> n;
-
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < K; i++)
 	{
-		cin >> arr[i];
+		cin >> V >> E;
 
-		dp[i] = 1;
-		dp2[i] = 1;
-	}
-
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i; j >= 0; j--)
+		for (int j = 0; j < E; j++)
 		{
-			if (arr[i] > arr[j] && dp[j] >= dp[i] - 1)
-				dp[i] = dp[j] + 1;
+			int num1, num2;
+			cin >> num1 >> num2;
 
+			v[num1].push_back(num2);
+			v[num2].push_back(num1);
 		}
-	}
 
-	for (int i = n - 1; i >= 0; i--)
-	{
-		for (int j = i; j < n; j++)
+		// 연결되지 않은 모든 트리 탐색
+		for (int j = 1; j <= V; j++)
 		{
-			if (arr[i] > arr[j] && dp2[j] >= dp2[i] - 1)
-				dp2[i] = dp2[j] + 1;
-
+			if (isVisit[j] == false)
+			{
+				isBinary(j);
+			}
 		}
+
+		bool isBi = true;
+		for (int j = 1; j <= V; j++)
+		{
+			for (int k = 0; k < v[j].size(); k++)
+			{
+				// 하나의 정점과 그 정점에 연결된 다른 정점의 그룹을 비교
+				if (group[j] == group[v[j][k]])
+				{
+					// 서로 연결된 두 정점의 그룹이 같다면 이분 그래프가 아님
+					isBi = false;
+					break;
+				}
+			}
+		}
+
+		if (isBi == true)
+			cout << "YES\n";
+		else
+			cout << "NO\n";
+
+		// 백터 및 방문 초기화
+		for (int i = 0; i <= V; i++)
+		{
+			v[i].clear();
+		}
+		fill_n(isVisit, 20001, false);
+		fill_n(group, 20001, 0);
+
 	}
-
-	for (int i = 0; i < n; i++)
-	{
-		if ((dp[i] + dp2[i]) > maxLength)
-			maxLength = dp[i] + dp2[i];
-	}
-
-
-	cout << maxLength - 1 << "\n";
 
 	return 0;
 }
